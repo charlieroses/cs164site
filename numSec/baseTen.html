@@ -1,0 +1,104 @@
+<html>
+    <head>
+   		<title>Base-10</title>
+        <base href="https://www.cs.drexel.edu/~src322/">
+        <script src="sidebar.js"></script>
+   		<script src="numSec/numJava.js"></script>
+   		<link rel="stylesheet" type="text/css" href="numSec/numCss.css">
+    </head>
+    <body>
+    	<div class="sideBar" id="sideBar">
+    	</div>
+        <script>setupSidebar();</script>
+	    <div class="mainInfo">
+	    	<div class="prevnextcontent">
+	    		<div class="leftprev">
+	    			<a href="numSec/">Previous Section</a> : Number Bases : Chapter 1
+	    		</div>
+	    		<div class="rightnext">
+	    			1.2 : Base-2 : <a href="numSec/baseTwo.html">Next Section</a>
+	    		</div>
+	    		<br>
+	    	</div>
+
+	    	<hr>
+   			<h1>1.1 : Base 10</h1>
+				<hr>
+   			<p>
+				Base-10 is the number system we all know and love.
+				We've been doing math with base-10 our entire lives.
+				We know how to add, subtract, multiply, divide and can do algebra with this number system.
+				So I'd say we know it very well.
+				So the goal is to understand all number systems as well as we understand base-10.
+				Let's dissect base-10 and learn the intricacies and trasnlate that to other number bases.
+   			</p>
+   			<p>
+				Consider the number <b>314</b>. 
+				This is a basic 3 digit number that will be rather easy to dissect. 
+				To dissect numbers, I like to set up a table like the following.
+   			</p>
+   			<center>
+   				<table>
+					<tr>
+	   					<th class="b10t"><b>Digit</b></th>
+	   					<td class="b10t">3</td>
+	   					<td class="b10t">1</td>
+	   					<td class="b10t">4</td>
+					</tr>
+					<tr>
+	  	 				<th class="b10t"><b>Power</b></th>
+	   					<td class="b10t">10<sup>2</sup></td>
+	   					<td class="b10t">10<sup>1</sup></td>
+	   					<td class="b10t">10<sup>0</sup></td>
+					</tr>
+					<tr>
+	   					<th class="b10t"><b>Value</b></th>
+	   					<td class="b10t">300</td>
+	   					<td class="b10t">10</td>
+	   					<td class="b10t">4</td>
+					</tr>
+   				</table>
+   			</center>
+   			<p>
+				First lets read our table. 
+				The <b>Digit</b> is what shows up in the place value. 
+				3 is the digit in the 100's place of 314. 
+				The digit can be any value from 0-9. 
+				The <b>Power</b> is the place. 
+				10<sup>0</sup> is the 1s place.
+				10<sup>1</sup> is the 10s place. 
+				10<sup>2</sup> is the 100s place. 
+				So on and so forth. 
+				Instead of calling this the 1s, 10s, and 100s places, I called them the powers. 
+				This will make sense as we move onto other number systems. 
+				As you can see the powers increase by one for each place value. 
+				The <b>Value</b> is the actual value of what the digit. 
+				This can be calculated by multiplying the digit by the power.
+				<br>
+				<br>
+				So the number <b>314</b> dissected is equal to <b>300</b> + <b>10</b> + <b>4</b>. 
+				This is equal to <b>(3 x 10<sup>2</sup>)</b> + <b>(1 x 10<sup>1</sup>)</b> + <b>(4 x 10<sup>0</sup>)</b>. 
+				This form will allow us to understand every number system.
+   			</p>
+   			<p>
+   				Let's generalize this information.
+   				Let's say we have Base-B.
+   				Base-B can have digits 0 through B-1.
+   				Each digit corresponds to a power.
+   				In a whole number, the right most power is B<sup>0</sup>.
+   				As you move leftward the power to which B is raised increases.
+   				If we have a three digit number, xyz, it is equal to (x * B<sup>2</sup>) + (y * B<sup>1</sup>) + (z * B<sup>0</sup>).
+   				This generalized formula is the first step to converting any number system into Base-10 numbers we can understand.
+   			</p>
+   			<hr>
+	    	<div class="prevnextcontent">
+	    		<div class="leftprev">
+	    			<a href="numSec/">Previous Section</a> : Number Bases : Chapter 1
+	    		</div>
+	    		<div class="rightnext">
+	    			1.2 : Base-2 : <a href="numSec/baseTwo.html">Next Section</a>
+	    		</div>
+	    	</div>
+    	</div>
+    </body>
+</html>

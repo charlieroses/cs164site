@@ -1,0 +1,243 @@
+<html>
+	<head>
+		<title>Nor</title>
+        <base href="https://www.cs.drexel.edu/~src322/">
+
+		<!-- Logic Bench Script -->
+	    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+   		<script type="text/javascript" src="boolSec/simcir.js"></script>
+   		<link rel="stylesheet" type="text/css" href="boolSec/simcir.css" />
+   		<script type="text/javascript" src="boolSec/simcir-basicset.js"></script>
+   		<link rel="stylesheet" type="text/css" href="boolSec/simcir-basicset.css" />
+   		<script type="text/javascript" src="boolSec/simcir-library.js"></script>
+
+        <script src="sidebar.js"></script>
+   		<script src="boolSec/boolJava.js"></script>
+   		<link rel="stylesheet" type="text/css" href="boolSec/boolcss.css">
+	</head>
+	<body>
+		<div class="sideBar" id="sideBar"></div>
+        <script>setupSidebar();</script>
+
+		<div class="mainInfo">
+	    	<div class="prevnextcontent">
+	    		<div class="leftprev">
+	    			<a href="boolSec/and.html">Previous Section</a> : And : 4.2.3
+	    		</div>
+	    		<div class="rightnext">
+	    			4.2.5 : Nand : <a href="boolSec/nand.html">Next Section</a>
+	    		</div>
+	    		<br>
+	    	</div>
+	    	<hr>
+	    	<h1>4.2.4 : Nor</h1>
+			<hr>
+	    	<p>
+				What if we want the opposite of OR?
+				We can apply a NOT operator on an OR operator and form NOT OR.
+				However, this can get clunky using two operators.
+				This is where the NOR operator comes in.
+				NOR combines the two operators, NOT and OR, into one.
+				Just like english we want neither x NOR y to be true.
+				Below shows the truth table set up just as before, 00, 01, 10, 11.		
+	    	</p>
+   			<center>
+   				<code>
+					Notation: x NOR y 
+   				</code>
+   				<div class="container">
+   					<table>
+						<tr>
+						    <th id="b2t"><b>x</b></th>
+						    <th id="b2t"><b>y</b></th>
+						    <th id="b2t"><b>x NOR y</b></th>
+						</tr>
+						<tr>
+						    <td id="b2t">0</td>
+						    <td id="b2t">0</td>
+						    <td id="b2t" style="background-color: rgb(140,140,140)">1</th>
+						</tr>
+						<tr>
+						    <td id="b2t">0</td>
+						    <td id="b2t">1</td>
+						    <td id="b2t" style="background-color: rgb(140,140,140)">0</th>
+						</tr>
+						<tr>
+						    <td id="b2t">1</td>
+						    <td id="b2t">0</td>
+						    <td id="b2t" style="background-color: rgb(140,140,140)">0</th>
+						</tr>
+						<tr>
+						    <td id="b2t">1</td>
+						    <td id="b2t">1</td>
+						    <td id="b2t" style="background-color: rgb(140,140,140)">0</th>
+						</tr>
+   					</table>
+   					<div class="container2">
+      					<img src="boolSec/imgs/nor.png" style="width: 312px; height: 127px">
+      					<div class="simcir">
+        					{
+							    "width":312,
+							    "height":108,
+							    "showToolbox":false,
+							    "devices":[
+							        {"type":"Toggle","id":"dev0","x":108,"y":12,"label":"X"},
+							        {"type":"Toggle","id":"dev1","x":108,"y":60,"label":"Y"},
+							        {"type":"DC","id":"dev2","x":52,"y":36,"label":"DC"},
+							        {"type":"NOR","id":"dev3","x":164,"y":36,"label":"NOR"},
+							        {"type":"LED","id":"dev4","x":220,"y":36,"label":"LED"}
+							    ],
+							    "connectors":[
+							        {"from":"dev0.in0","to":"dev2.out0"},
+							        {"from":"dev1.in0","to":"dev2.out0"},
+							        {"from":"dev3.in0","to":"dev0.out0"},
+							        {"from":"dev3.in1","to":"dev1.out0"},
+							        {"from":"dev4.in0","to":"dev3.out0"}
+							    ]
+      						}
+      					</div>
+   					</div>
+   				</div>
+   			</center>
+			<p>
+				Currently, I can't seem to find the real mathematical similarities
+				to NOR.
+				NOR does have some other interesting properties.
+				Also, I felt bad about not giving another venn diagram.
+			</p>
+			<center>
+				<img src="boolSec/imgs/norvenn.png">
+			</center>
+   			<hr>
+			<h3>A Universal Gate</h3>
+			<p>
+				As mentioned above, NOR has some very interesting properties.
+				The most important of which is that it's a universal gate.
+				What is a universal gate, you may ask.
+				A universal gate is a gate that can make other gates.
+				I can use a NOR gate to create a NOT, OR, and AND gate.
+				This means, I can replace all these gates with NOR and solve any boolean
+				expression with only NOR gates.
+				Below I sketched out how to do each gate.
+				Make the truth table for each.
+				Don't just memorize what these look like, understand why they work.
+			</p>
+			<center>
+			<div class="container">
+				<img src="boolSec/imgs/notnor.png">
+				<table>
+					<tr>
+						<th id="b2t"><b>x</b></th>
+					    <th id="b2t"><b>x NOR x</b></th>
+						<th id="b2t"><b>NOT x</b></th>
+					</tr>
+					<tr>
+					    <td id="b2t">0</td>
+					    <td id="b2t" style="background-color: rgb(140,140,140)">1</td>
+					    <td id="b2t" style="background-color: rgb(140,140,140)">1</td>
+					</tr>
+					<tr>
+						<td id="b2t">1</td>
+					    <td id="b2t" style="background-color: rgb(140,140,140)">0</td>
+					    <td id="b2t" style="background-color: rgb(140,140,140)">0</td>
+					</tr>
+   				</table>
+
+			</div>
+			</center>
+			<center>
+			<div class="container">
+				<img src="boolSec/imgs/ornor.png">
+				<table>
+					<tr>
+						<th id="b2t"><b>x</b></th>
+						<th id="b2t"><b>y</b></th>
+					    <th id="b2t"><b>(x NOR y)<br>NOR<br>(x NOR y)</b></th>
+						<th id="b2t"><b>x OR y</b></th>
+					</tr>
+					<tr>
+					    <td id="b2t">0</td>
+						<td id="b2t">0</td>
+					    <td id="b2t" style="background-color: rgb(140,140,140)">0</td>
+					    <td id="b2t" style="background-color: rgb(140,140,140)">0</td>
+					</tr>
+   					<tr>
+					    <td id="b2t">0</td>
+						<td id="b2t">1</td>
+					    <td id="b2t" style="background-color: rgb(140,140,140)">1</td>
+					    <td id="b2t" style="background-color: rgb(140,140,140)">1</td>
+					</tr>
+   					<tr>
+					    <td id="b2t">1</td>
+						<td id="b2t">0</td>
+					    <td id="b2t" style="background-color: rgb(140,140,140)">1</td>
+					    <td id="b2t" style="background-color: rgb(140,140,140)">1</td>
+					</tr>
+ 					<tr>
+					    <td id="b2t">1</td>
+						<td id="b2t">1</td>
+					    <td id="b2t" style="background-color: rgb(140,140,140)">1</td>
+					    <td id="b2t" style="background-color: rgb(140,140,140)">1</td>
+					</tr>
+   	  			</table>
+			</div>
+			</center>
+			<center>
+			<div class="container">
+				<img src="boolSec/imgs/andnor.png">
+				<table>
+					<tr>
+						<th id="b2t"><b>x</b></th>
+						<th id="b2t"><b>y</b></th>
+					    <th id="b2t"><b>(x NOR x)<br>NOR<br>(y NOR y)</b></th>
+						<th id="b2t"><b>x AND y</b></th>
+					</tr>
+					<tr>
+					    <td id="b2t">0</td>
+						<td id="b2t">0</td>
+					    <td id="b2t" style="background-color: rgb(140,140,140)">0</td>
+					    <td id="b2t" style="background-color: rgb(140,140,140)">0</td>
+					</tr>
+   					<tr>
+					    <td id="b2t">0</td>
+						<td id="b2t">1</td>
+					    <td id="b2t" style="background-color: rgb(140,140,140)">0</td>
+					    <td id="b2t" style="background-color: rgb(140,140,140)">0</td>
+					</tr>
+   					<tr>
+					    <td id="b2t">1</td>
+						<td id="b2t">0</td>
+					    <td id="b2t" style="background-color: rgb(140,140,140)">0</td>
+					    <td id="b2t" style="background-color: rgb(140,140,140)">0</td>
+					</tr>
+ 					<tr>
+					    <td id="b2t">1</td>
+						<td id="b2t">1</td>
+					    <td id="b2t" style="background-color: rgb(140,140,140)">1</td>
+					    <td id="b2t" style="background-color: rgb(140,140,140)">1</td>
+					</tr>
+   	  			</table>
+			</div>
+			</center>
+			<hr>
+   			<h2>Practice Problems</h2>
+   			<p>
+   				If y is false and (x NOR y) is true, what is x?
+   			</p>
+   			<textarea id="norq1"></textarea>
+   			<br>
+   			<button onclick="norq1Submit()">Submit</button>
+   			<p id="norq1Out"></p>
+	    	<hr>
+	    	<div class="prevnextcontent">
+	    		<div class="leftprev">
+	    			<a href="boolSec/and.html">Previous Section</a> : And : 4.2.3
+	    		</div>
+	    		<div class="rightnext">
+	    			4.2.5 : Nand : <a href="boolSec/nand.html">Next Section</a>
+	    		</div>
+	    		<br>
+	    	</div>
+	    </div>
+	</body>
+</html>

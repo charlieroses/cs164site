@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Markup Languages</title>
+	<base href="https://www.cs.drexel.edu/~src322/">
+    <script src="sidebar.js"></script>
+    <script src="langSec/langJS.js"></script>
+    <link rel="stylesheet" href="langSec/langCSS.css">
+  </head>
+  <body>
+    <div class="sideBar" id="sideBar">
+    </div>
+    <script>setupSidebar();</script>
+    <div class="mainInfo">
+      <div class="prevnextcontent">
+        <div class="leftprev">
+          <a href="langSec/XXXXXX">Previous Section</a> : XXXXXX : 6.X
+        </div>
+        <div class="rightnext">
+          XXXXXX : XXXXXX : <a href="langSec/XXXXXX">Next Section</a>
+        </div>
+        <br>
+      </div>
+      <hr>
+      <h1>6.X : Markup Languages</h1>
+      <hr>
+	  <p>
+        Markup languages are my personal favorite.
+        In the simplest description possible, they are used to produce a pretty output.
+        I'm gonna quickly go over two common markup languages: HTML and Tex.
+        Both of these are probably worth your time to learn.
+        I'm not going to go in depth on them, but I'll definitely go over the main ideas.
+      </p>
+      <hr>
+      <h3>HTML</h3>
+      <p>
+        <b>H</b>yper<b>T</b>ext <b>M</b>arkup <b>L</b>anguage, or HTML is the main language used for web development.
+        In CS-164, it's the language you'll be using on tux to create your websites.
+        In fact, I've written this site in HTML on tux.
+        You can view the code by right clicking the page and clicking "View Page Source".
+      </p>
+      <p>
+        Now the basis of HTML is tags.
+        Each element has an opening tag and a closing tag.
+        These tags are nested inside each other to create the document.
+        All HTML documents start with a &lt;html&gt; tag and end with a &lt;/html&gt; tag.
+        Inside there is a &lt;head&gt; and a &lt;body&gt;.
+        Inside the &lt;body&gt;, we have elements like headers &lt;h3&gt;
+        or paragraphs &lt;p&gt;.
+        Now what does this all mean?
+        So the analogy I use is a person.
+        The &lt;html&gt; tag defines the document, this is defining that this is a human.
+        Then we have the &lt;head&gt; and &lt;body&gt; tags.
+        People also have heads and bodies.
+        Inside the &lt;head&gt; tag goes things you'd typically not see.
+        The &lt;title&gt; of the website.
+        Maybe some JavaScript with functions.
+        I consider this the brain.
+        Nobody can see your thinking inside your brain.
+        That doesn't mean it's not important.
+        Inside the &lt;body&gt; goes elements you see.
+        That's where the images &lt;img&gt;, headers &lt;h1&gt;, and paragraphs 
+        &lt;p&gt; go.
+        These are the arms and legs and parts of my human body you see.
+        The JavaScript brain can tell these elements to have different functions.
+        Then CSS is the clothing, the style.
+      </p>
+      <hr>
+      <h3>CSS</h3>
+      <p>
+        What is CSS?
+        I'm glad you asked.
+        CSS is <b>C</b>ascading <b>S</b>tyle <b>S</b>heet.
+        Like I said before, CSS is the clothing and style of HTML.
+        See how my website has nice blues and greys.
+        It's all because of CSS.
+        My fancy side bar of links.
+        It's CSS.
+        CSS gives HTML personality.
+        There are a few ways to use CSS.
+        You can use inline styling,
+        attach a CSS stylesheet,
+        or use the &lt;style&gt; tag in the &lt;head&gt; tag to add style.
+      </p>
+      <hr>
+      <h3>HTML Editor</h3>
+      <p>
+        Below, I made a basic HTML editor.
+        In the textarea on the left, type in your HTML code, then press the
+        "View" button and see what you've created!
+        This currently only works on HTML and CSS.
+        No JavaScript yet.
+      </p>
+      <button id="tryitout" onclick="interpretHTML()">View</button>
+      <iframe name="embed" src="langSec/embeddedEdit.html"></iframe>
+      <hr>
+      <h3>Tex</h3>
+      <p>
+        Tex is a markup language used mainly for PDFs.
+        Each Tex or LaTeX document begins with a \begin{document} and ends with
+        a \end{document}.
+        While HTML has &lt;tags&gt;, Tex has these control sequences.
+        These start with \ and signifify different tokens and actions within tex.
+        I included a reference sheet below, from Brown University.
+        If you have issues viewing the file below, you can follow this link.
+        <a href="langSec/TeXRefCard.v1.5.pdf">TeX Reference Card</a>
+      </p>
+      <embed id="texcard" src="langSec/TeXRefCard.v1.5.pdf" type="application/pdf">
+
+      <hr>
+      <div class="prevnextcontent">
+        <div class="leftprev">
+          <a href="index.html">Previous Section</a> : XXXXXX : XXXXXXX
+        </div>
+        <div class="rightnext">
+          XXXXXX : XXXXXX : <a href="numSec/">Next Section</a>
+        </div>
+        <br>
+      </div>
+    </div>
+  </body>
+</html>

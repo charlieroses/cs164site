@@ -1,0 +1,184 @@
+/*
+BLUES
+Text: #072a7c
+Table: #3456a3
+Links: #0e3793
+
+GREY
+Background: rgb(200,200,200)
+Sidebar BG: #B4B4B4
+Sidebar Hover: #CCCCCC
+Table Data: rgb(160,160,160)
+Midpoint: rgb(130,130,130)
+*/
+
+a
+{
+   color: #0e3793;
+}
+.b10t
+{
+   width: 100px;
+   height: 50px;
+}
+
+.b16c
+{
+   width: 95px;
+   height: 30px;
+}
+
+.b16vt
+{
+   width: 95px;
+   height: 30px;
+}
+
+.b2t
+{
+   width: 100px;
+   height: 50px;
+}
+
+blue
+{
+   color: rgb(0,0,255);
+}
+
+body
+{
+   background-color: rgb(200,200,200);
+   font-size: 120%;
+}
+
+button
+{
+   background-color: #3456a3;
+   color: #FFFFFF;
+   width: 175px;
+}
+
+code
+{
+    font-size: 130%;
+}
+
+#colorBox
+{
+    width: 215px;
+    height: 215px;
+    background-color: rgb(255,255,255);
+}
+
+#colorBoxSub
+{
+   width: 215px;
+}
+
+green
+{
+   color: rgb(0,255,0);
+}
+
+h1
+{
+   color: #072a7c;
+}
+
+h2
+{
+   color: #072a7c;
+}
+.mainInfo
+{
+   overflow-x: hidden;
+   margin-left: 300px;
+   margin-right: 50px;
+}
+
+.prevnextcontent > *
+{
+   display: inline-block;
+   vertical-align: middle;
+}
+
+.prevnextcontent > .leftprev
+{
+   margin-left: 300px;
+   left: 0;
+   position: absolute;
+}
+
+.prevnextcontent > .rightnext
+{
+   margin-right: 50px;
+   right: 0;
+   position: absolute;
+}
+
+red
+{
+   color: rgb(255,0,0);
+}
+
+#redtext, #greentext, #bluetext
+{
+   height: 25px;
+   width: 70px;
+   resize: none;
+}
+
+#rgbcircles
+{
+   width: 250px;
+   height: 250px;
+}
+.sideBar
+{
+   position: fixed;
+   left: 0;
+   width: 250px;
+   border-right: 1px solid;
+   overflow-y: scroll;
+   padding-left: 1%;
+   padding-right: 1%;
+   height: 100%;
+   background-color: #B4B4B4;
+   z-index: 2;
+   top: 0;
+}
+.sideBar > a
+{
+   background-color: #B4B4B4;
+   display: block;
+   text-decoration: none;
+}
+.sideBar > a:hover
+{
+   background-color: #CCCCCC;
+   display: block;
+}
+
+tab5
+{
+   padding-left: 5em;
+}
+
+td
+{
+   text-align: center;
+   background-color: rgb(160,160,160);
+}
+
+textarea
+{
+   height: 35px;
+   width: 175px;
+   resize: none;
+}
+
+th
+{
+   text-align: center;
+   background-color: #3456a3;
+}

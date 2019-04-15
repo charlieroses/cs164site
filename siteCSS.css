@@ -1,0 +1,85 @@
+/*
+Basic color scheme:
+pastel and rainbow uwu
+
+
+
+
+*/
+/**********************************MAIN DIVS***********************************/
+body
+{
+    padding: 3%;
+    text-align: center;
+}
+
+body > div
+{
+    display: inline-block;
+    height: 80%;
+    max-height: 80%;
+    min-height: 80%;
+    vertical-align: top;
+}
+
+#aboutMe
+{
+    background-color: #FF0000;
+    text-align: center;
+    width: 15%;
+}
+
+#main
+{
+    background-color: #00FF00;
+    width: 45%;
+}
+
+#links
+{
+    /*background-color: #0000FF;*/
+    text-align: center;
+    width: 23%;
+}
+
+/***********************************LINK DIV***********************************/
+img
+{
+    height: 200px;
+    width: 200px;
+}
+
+/***********************************LINK DIV***********************************/
+button
+{
+    background-color: rgba(0,0,0,0);
+    border-style: none;
+    display: block;
+    padding: 4px;
+    width: 100%;
+}
+
+#githubProj:hover
+{
+    background-color: #FFBCBC;
+}
+
+#profExp:hover
+{
+    background-color: #FFD1B4;
+}
+
+#resume:hover
+{
+    background-color: #FFEEAA;
+}
+
+#art:hover
+{
+    background-color: #C1F9CB;
+}
+
+#idkother:hover
+{
+    background-color: #A8F1FF;
+}

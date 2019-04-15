@@ -1,0 +1,189 @@
+<html>
+	<head>
+		<title>Complex Expressions</title>
+        <base href="https://www.cs.drexel.edu/~src322/">
+
+		<!-- Logic Bench Script -->
+	    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+   		<script type="text/javascript" src="boolSec/simcir.js"></script>
+   		<link rel="stylesheet" type="text/css" href="boolSec/simcir.css" />
+   		<script type="text/javascript" src="boolSec/simcir-basicset.js"></script>
+   		<link rel="stylesheet" type="text/css" href="boolSec/simcir-basicset.css" />
+   		<script type="text/javascript" src="boolSec/simcir-library.js"></script>
+
+        <script src="sidebar.js"></script>
+   		<script src="boolSec/boolJava.js"></script>
+   		<link rel="stylesheet" type="text/css" href="boolSec/boolcss.css">
+	</head>
+	<body>
+		<div class="sideBar" id="sideBar"></div>
+        <script>setupSidebar();</script>
+		<div class="mainInfo">
+	    	<div class="prevnextcontent">
+	    		<div class="leftprev">
+	    			<a href="boolSec/xor.html">Previous Section</a> : Xor : 4.2.6
+	    		</div>
+	    		<div class="rightnext">
+	    			4.4 : Half Adder : <a href="boolSec/halfAdder.html">Next Section</a>
+	    		</div>
+	    		<br>
+	    	</div>
+	    	<hr>
+	    	<h1>4.3 : Complex Expressions</h1>
+			<hr>
+			<p>
+				Now that we know our basic operators, we can form much larger expressions.
+				We use larger expressions to do more math and create processors like the ones
+				in your computer.
+				But how do we evaluate these expressions?
+				We break each expression into smaller expressions and use a truth table.
+			</p>
+			<center>
+				<code>(P v Q)' ^ (R ^ (P' v Q))</code>
+				<br>
+				<br>
+				<table>
+					<tr>			
+						<th><b>P</b></th>
+						<th><b>Q</b></th>
+						<th><b>R</b></th>
+						<th><b>P v Q</b></th>
+						<th><b>(P v Q)'</b></th>
+						<th><b>P'</b></th>
+						<th><b>P' v Q</b></th>
+						<th><b>R ^ (P' v Q)</b></th>
+						<th><b>(P v Q)' ^ (R ^ (P' v Q))</b></th>
+					</tr>
+					<tr>			
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>0</td>
+						<td style="background-color: rgb(140,140,140)">0</td>
+					</tr>
+					<tr>			
+						<td>0</td>
+						<td>0</td>
+						<td>1</td>
+						<td>0</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td style="background-color: rgb(140,140,140)">1</td>
+					</tr>
+						<tr>			
+						<td>0</td>
+						<td>1</td>
+						<td>0</td>
+						<td>1</td>
+						<td>0</td>
+						<td>1</td>
+						<td>1</td>
+						<td>0</td>
+						<td style="background-color: rgb(140,140,140)">0</td>
+					</tr>
+					<tr>			
+						<td>0</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>0</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td style="background-color: rgb(140,140,140)">0</td>
+					</tr>
+					<tr>			
+						<td>1</td>
+						<td>0</td>
+						<td>0</td>
+						<td>1</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td style="background-color: rgb(140,140,140)">0</td>
+					</tr>
+					<tr>			
+						<td>1</td>
+						<td>0</td>
+						<td>1</td>
+						<td>1</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td style="background-color: rgb(140,140,140)">0</td>
+					</tr>
+					<tr>			
+						<td>1</td>
+						<td>1</td>
+						<td>0</td>
+						<td>1</td>
+						<td>0</td>
+						<td>0</td>
+						<td>1</td>
+						<td>0</td>
+						<td style="background-color: rgb(140,140,140)">0</td>
+					</tr>
+					<tr>			
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>0</td>
+						<td>0</td>
+						<td>1</td>
+						<td>1</td>
+						<td style="background-color: rgb(140,140,140)">0</td>
+					</tr>
+				</table>
+			</center>
+			<hr>
+			<h3>De Morgan's Law</h3>
+			<p>
+				Augustus De Morgan was a British mathematician and logician.
+				De Morgan's laws are named for him.
+				It is through De Morgan's laws that it is possible for NOR and NAND to be universal gates.
+				The laws are the following.
+			</p>
+			<center>
+				<code>
+					(P &or; Q)' == P' &and; Q'
+					<br>
+					<br>
+					(P &and; Q)' == P' &or; Q'
+				</code>
+			</center>
+			<p>
+				De Morgans law is the act of distributing a negation.
+				The negation is distributed to each of the inner terms,
+				then the operation is flipped.
+				The AND is turned into an OR, the OR is turned into an AND.
+				This is why NAND and NOR are universal gates.
+				<br>
+				Above we see a NAND turned into a NOT val OR NOT val expression.
+				A NOR is turned into a NOT val AND NOT val expression.
+				Since we can create a negation by putting the same value into a NOR or NAND gate twice,
+				we can do (x NAND x) NAND (y NAND y) (x' &and; y')' to get (x &or; y).
+				The same applies to NOR.
+				We can do (x NOR x) NOR (y NOR y) (x' &or; y')' to get (x &and; y).
+			</p>
+			<hr>
+	    	<div class="prevnextcontent">
+	    		<div class="leftprev">
+	    			<a href="boolSec/xor.html">Previous Section</a> : Xor : 4.2.6
+	    		</div>
+	    		<div class="rightnext">
+	    			4.4 : Half Adder : <a href="boolSec/halfAdder.html">Next Section</a>
+	    		</div>
+	    		<br>
+	    	</div>
+	    </div>
+	</body>
+</html>
