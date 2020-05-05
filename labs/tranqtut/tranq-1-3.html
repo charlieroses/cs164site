@@ -1,0 +1,151 @@
+<html>
+<head>
+<title>tranq Lesson 1 Part 3</title>
+</head>
+<body>
+		
+<h1>
+To Assign is to Store
+</h1>
+		
+<p>
+			In Tranquility, unlike most mainstream languages, the colon
+			(
+<code>
+:
+</code>
+) is used for 
+<i>
+assignment.
+</i>
+			Most mainstream languages however use the equals sign
+			(
+<code>
+=
+</code>
+) for assignment.
+			It is often said that this is like an equality in mathematic,
+			but there are important differences that you need to
+			internalize.
+			In math, if we make a statement such as 
+<i>
+y
+</i>
+=2
+<i>
+x
+</i>
++5,
+			then we are typically establishing a relationship between 
+<i>
+x
+</i>
+			and 
+<i>
+y
+</i>
+ that remains true thoughout the problem we're
+			solving or proof we're developing.
+			In other words, no matter what 
+<i>
+x
+</i>
+ is, 
+<i>
+y
+</i>
+ will 
+<b>
+always
+</b>
+			be 2
+<i>
+x
+</i>
++5.
+		
+</p>
+		
+<p>
+			Establishing a relationship is not the right way to think about
+			assignment in programming.
+			The reason is that programming is not about establishing static
+			relationships; it's about specifying a sequence of actions through
+			time.
+			So if the current value of 
+<i>
+x
+</i>
+ is 3, then when we execute
+			the statement 
+<i>
+y
+</i>
+=2
+<i>
+x
+</i>
++5, then 
+<i>
+y
+</i>
+ will get
+			the value 11.
+			That much is what we'd expect from math, but if later 
+<i>
+x
+</i>
+			changes, then 
+<i>
+y
+</i>
+ doesn't change correspondingly.
+			Similarly, we can't assert that 
+<i>
+y
+</i>
+ is a particular value
+			and expect that the computer will solve for 
+<i>
+x
+</i>
+.
+			The way we want to think about this is that the assignment
+			sets 
+<i>
+y
+</i>
+ to 11 at a particular point in time, but that later
+			
+<i>
+x
+</i>
+ and 
+<i>
+y
+</i>
+ can change independently of each other.
+		
+</p>
+		
+<hr>
+		
+<script src="tranq-1-3.js"></script>
+<form method = "GET">
+			Although you haven't seen the details of what the operations
+			on the right-hand side of the assignments do, study the
+			assignments in the CARDIAC simulator.
+			Based on these statements and what you know about the
+			CARDIAC, what instruction would be used in the CARDIAC
+			to carry out an assignment?
+			
+			
+<p><input type=radio name=ans value=1> ADD
+<p><input type=radio name=ans value=2> TAC
+<p><input type=radio name=ans value=3> JMP
+<p><input type=radio name=ans value=4> STO
+<p><input type="button" value="Submit Answer" onclick="check_1_3(this.form)">
+</form>
+	
+</body>
+</html>

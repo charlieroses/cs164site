@@ -1,0 +1,186 @@
+<html>
+<head>
+<title>CS-164 CARDIAC Lab</title>
+ <script src="sidebar.js"></script>
+<base href="https://www.cs.drexel.edu/~src322/cs164/">
+<link rel="stylesheet" href="labs/labcss.css">
+</head>
+<body>
+<h1>CARDIAC Arrest</h1>
+<p>	
+	In class, we discussed the CARDIAC and a small example of adding two numbers.
+	In this lab, you will develop a more capable summation program.  
+	Your program will read in a variable number of values and print out the number of values read and their sum
+</p>
+<p>
+	Make sure to answer the following lab questions in a plain text file named questions5.txt
+	At the top of your plain text file, include your name, user id, and lab section.
+</p>
+<b>Helpful Links</b>
+<br>
+<a href="https://www.cs.drexel.edu/~bls96/museum/cardsim.html">CARDIAC Simulator</a>
+<br>
+<a href="https://www.cs.drexel.edu/~bls96/museum/cardiac.html">More Information</a>
+<br>
+<a href="cardSec/CARDIAC_manual.pdf">CARDIAC Manual</a>
+<hr>
+<h3>Question 1 (10pts)</h3>
+<p>
+	The plan is to keep reading numbers from the input until a negative number is read.  
+	Which instruction allows us to test a number and decide on a different course of action if that number is negative?
+</p>
+<table>
+	<tr>
+		<th colspan="2">Instructions</th>
+	</tr>
+	<tr>
+		<td>0</td>
+		<td>INP</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>CLA</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>ADD</td>
+		</tr>
+			<tr>
+			<td>3</td>
+			<td>TAC</td>
+		</tr>
+			<tr>
+			<td>4</td>
+			<td>SFT</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>OUT</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>STO</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>SUB</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>JMP</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>HRS</td>
+		</tr>	
+	</table>
+	<br>
+	
+	<h3>Question 2 (5pts)</h3>
+	<p>
+		For the next step you should write the instructions that will repeatedly read an input until a negative number is read.  
+		To do this, there are several details to address:
+	</p>
+	<ol>
+		<li>Pick a name for a memory location where the data will be read.</li>
+		<li>Which instruction is used to read an input card into memory?</li>
+		<li>How will you get the number you just read into the accumulator to test it?</li>
+		<li>What action will you take if the number is positive and what action if it's negative?</li>
+	</ol>
+	<p>
+		The first step is to answer these questions in english.
+		Explain the process of what's happening in english words.
+	</p>
+	<br>
+	<h3>Question 3 (5pts)</h3>
+	<p>
+		The last question you answer in english words.
+		Now, turn those english words into assembly code.
+	</p>
+
+	<br>
+	<h3>Question 4 (10pts)</h3>
+	<p>
+		Convert the assembly language from your answer to the previous question to machine language in the same way as shown in the examples.
+		In doing so, remember you'll need to select memory locations for your variables and code.  
+		I suggest putting the variable into which you read numbers at memory location 04 and that you put your code starting at location 10.
+		Enter the addresses and values as an answer.
+	</p>
+	<br>
+
+	<h3>Question 5 (10pts)</h3>
+	<p>
+		Now it's time to test out your program on the CARDIAC simulator.
+		Enter the program numbers you answered in the previous question into the CARDIAC's memory.  
+		Put the values into 005, 010, and -001 into the input deck. 
+		Now press, Load and Reset.  
+		Then click Step repeatedly until your program halts.  
+		Did it correctly read in each number and stop when it read the negative number? 
+		Were there any problems that your testing exposed?
+	</p>
+	<br>
+
+	<h3>Question 6 (10pts)</h3>
+	<p>
+		The next step is to enhance your program so that it counts the number of non-negative values read.
+		Each time you've read a non-negative number, add one to the count.  
+		When a negative number is read, use the OUT instruction to output the count.
+		Put your modified assembly language program in the answer box below.
+	</p>
+	<br>
+
+	<h3>Question 7 (10pts)</h3>
+	<p>
+		As before, convert your assembly language program into machine language.  
+		Put the addresses and values as the answer.
+	</p>
+	<br>
+
+	<h3>Question 8 (10pts)</h3>
+	<p>
+		Put this modified program into the CARDIAC as you did the previous one.
+		You may want to click the "Clear Mem" button to clear out the memory before starting.
+		Test your program with the same input cards as before.
+		Does it correctly output the number 002?  
+		Did you have to fix any bugs with this one?
+	</p>
+	<br>
+
+	<h3>Question 9 (10pts)</h3>
+	<p>
+		The final development step is to add the input values to a running sum.  
+		You'll be able to draw on the example from class for this part. 
+		When you read a negative number, output the sum after the count.
+	</p>
+	<br>
+
+	<h3>Question 10 (10pts)</h3>
+	<p>
+		As with the other two parts, assemble the program and put the addresses and values as the answer.
+	</p>
+	<br>
+
+	<h3>Question 11 (10pts)</h3>
+	<p>
+		Test your new program with the same input card deck.  
+		Do you get the right answers?  
+		Test your program with other sets of data.  
+		Put the input values that you use for testing along with the results generated by your program.  
+		Share test data with your group members.  
+		So you should be able to report the same number of tests as you have team members.
+	</p>
+	<br>
+
+	<h3>Extra Credit (5pts)</h3>
+	<p>
+		If you're in the Honors section, 65H this is not extra credit.
+		This is normal credit.
+		Failure to answer will result in the loss of 5 points.
+		Everyone else, this is extra credit for you.
+		<br><br>
+		For extra credit, generate and test a bootable card deck for your program.  
+		Put your debugged card deck as an answer.
+	</p>
+	<br>
+ </body>
+</html>

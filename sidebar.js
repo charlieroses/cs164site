@@ -1,8 +1,8 @@
 function setupSidebar()
 {
 	document.getElementById("sideBar").innerHTML = "<br><a href=\"index.html\"><b>Introduction</b></a>" +
-      "<a href=\"about.html\"><b>About Me</b></a><hr>";
-
+      "<a href=\"about.html\"><b>About Me</b></a>";
+	document.getElementById("sideBar").innerHTML += "<a href=\"answers.html\"><b>Practice Problem Answers</b></a><hr>";
     document.getElementById("sideBar").innerHTML += "<a href=\"numSec/\"><b>Chapter 1 :</b> Number Bases</a>" +
       "<a href=\"numSec/baseTen.html\"><b>1.1 :</b> Base-10</a>" +
       "<a href=\"numSec/baseTwo.html\"><b>1.2 :</b> Base-2</a>" +
@@ -32,12 +32,20 @@ function setupSidebar()
       "<a href=\"boolSec/halfAdder.html\"><b>4.4 :</b> Half Adder</a>" +
       "<a href=\"boolSec/fullAdder.html\"><b>4.5 :</b> Full Adder</a>" +
       "<a href=\"boolSec/alu.html\"><b>4.6 :</b> Arithmetic Logic Unit - ALU</a>" +
-      "<a href=\"boolSec/circuit.html\"><b>4.7 :</b> Digital Logic Workbench</a><hr>";
+      "<a href=\"boolSec/circuit.html\"><b>4.7 :</b> Digital Logic Workbench</a>" +
+	  "<a href=\"boolSec/minecraft.html\"><b>4.8 :</b> Minecraft</a><hr>";
 
     document.getElementById("sideBar").innerHTML += "<a href=\"cardSec/\"><b>Chapter 5 :</b> The CARDIAC</a>" +
       "<a href=\"cardSec/hardware.html\"><b>5.1 :</b> The Hardware</a>" +
       "<a href=\"cardSec/program.html\"><b>5.2 :</b> Programming the CARDIAC</a>" +
       "<a href=\"cardSec/assMach.html\"><b>5.3 :</b> Assembly and Machine Language</a><hr>";
 
-    document.getElementById("sideBar").innerHTML += "<a href=\"answers.html\"><b>Answers</b></a><br>";
+    document.getElementById("sideBar").innerHTML += "<a href=\"langSec/\"><b>Chapter 6 :</b> Languages</a>" +
+      "<a href=\"langSec/langInfo.html\"><b>6.1 :</b> Processing Language</a>" +
+      "<a href=\"langSec/markup.html\"><b>6.2 :</b> Markup Languages</a>" +
+      "<a href=\"langSec/program.html\"><b>6.3 :</b> Programming Languages</a>" +
+      "<a href=\"langSec/tranq.html\"><b>6.4 :</b> Tranquility</a>" +
+      "<a href=\"langSec/state.html\"><b>6.5 :</b> State and State Machines</a><br>";
+
+
 }

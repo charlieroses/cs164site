@@ -1,0 +1,110 @@
+<html>
+<head>
+<title>tranq Lesson 1 Part 8</title>
+</head>
+<body>
+		
+<h1>
+Function, Function, What's Your Function?
+</h1>
+		
+<p>
+			Throughout this tutorial we have been looking at code
+			that can be contained in functions.
+			Functions are used to organize our code.
+			They give us ways to name sections of code and to
+			provide blocks of code that can be used repeatedly
+			without repeating the text of the code.
+			There's even more that functions can do for us, but
+			for for our purposes in this tutorial, those are the
+			main benefits.
+		
+</p>
+		
+<p>
+			The general format for functions looks like:
+		
+</p>
+		
+<b>
+fun
+</b>
+ 
+<i>
+name
+</i>
+(
+<i>
+parameters
+</i>
+)
+<br>
+		{
+<br>
+		&nbsp;    // Function body
+<br>
+		}
+<br>
+		
+<p>
+			As with variables, the name can be anything you want it
+			to be, but it should start with a letter.
+			The parameters are a list of names that allow input data
+			to be passed into the function.
+		
+</p>
+		
+<p>
+			Function can also produce outputs.
+			The output of a function is specified in the
+			
+<code>
+return
+</code>
+ statement.
+		
+</p>
+		
+<hr>
+		What is the value of 
+<i>
+x
+</i>
+ after the statements:
+<pre>
+var x
+x : 5
+x : foo(.x)
+</pre>
+		where the function 
+<i>
+foo
+</i>
+() is defined as
+		follows:
+<pre>
+fun foo(n) {
+    var x, j
+    j : 0
+    x : 0
+    loop {
+        until .x &gt;= .n
+        j : .j + .x
+        x : .x + 1
+    }
+    return .j
+}
+</pre>
+		
+<script src="tranq-1-8.js"></script>
+<form method = "GET">
+			
+<p><input type=radio name=ans value=1> 5
+<p><input type=radio name=ans value=2> 15
+<p><input type=radio name=ans value=3> 4
+<p><input type=radio name=ans value=4> 10
+<p><input type="button" value="Submit Answer" onclick="check_1_8(this.form)">
+</form>
+	
+</body>
+</html>

@@ -1,0 +1,130 @@
+<html>
+<head>
+<title>tranq Lesson 1 Part 4</title>
+</head>
+<body>
+		
+<h1>
+You're Going to Forget the Dot
+</h1>
+		
+<p>
+			The next part goes over operators in much more depth.
+			However, I will be using them to explain a concept here.
+			I apologize in advance.
+		
+</p>
+		
+<p>
+			Tranquility has a feature that not many languages have, it's called
+			"the dot". Technically, the proper name would be a pointer dereference, however,
+			ask any TA or student, and we call it "the dot". A pointer is the address of
+			a variable. The contents of a variable are separate from the address of a 
+			variable.
+		
+</p>
+<pre>
+	var w, x, y, z
+	w : 7
+	x : 4
+	y : 1
+	z : 69
+</pre>
+		
+<center>
+			
+<img src="mem.png">
+	
+		
+</center>
+		
+<p>
+			So what does memory location and value mean? Let's think about memory and 
+			visualize it. In the above code, there are 4 variables, 
+<i>
+w, x, y, z
+</i>
+.
+			Each variable refers to a location in memory. This location is referenced using
+			a number. In the above, 
+<i>
+w
+</i>
+ refers to memory location 65535. The value that
+			memory location 65535 contains is 7. In order to differentiate between 
+<i>
+w
+</i>
+ and
+			the contents of 
+<i>
+w
+</i>
+ (7), we use the dot. This means, the contents of 
+<i>
+w
+</i>
+			is denoted by 
+<code>
+.w
+</code>
+		
+</p>
+		
+<p>
+			Now, how do we apply this information? How do we know when to use a dot? 
+			First, let's translate colon (
+<code>
+:
+</code>
+) to be "set the contents of".
+			So to set the contents of 
+<i>
+x
+</i>
+, (
+<code>
+.x
+</code>
+) we'd use 
+			`
+<code>
+x : something
+</code>
+`. So in this case, we do not use the dot.
+			In order to use the contents of x, like in an equation or something, 
+			you would do `
+<code>
+.x == .y
+</code>
+`
+		
+</p>
+	
+		
+<hr>
+		
+<script src="tranq-1-4.js"></script>
+<form method = "GET">
+			Which of the following uses proper dot notation to put the value 7 in 
+			
+<code>
+x
+</code>
+ given the following:
+<pre>
+	var x, y, z
+	x : 0
+	y : 5
+	z : 2
+</pre>
+			
+<p><input type=radio name=ans value=1> .x : .y + .z
+<p><input type=radio name=ans value=2> x : .y + .z
+<p><input type=radio name=ans value=3> x : y + z
+<p><input type=radio name=ans value=4>  .x : y + z
+<p><input type="button" value="Submit Answer" onclick="check_1_4(this.form)">
+</form>
+	
+</body>
+</html>

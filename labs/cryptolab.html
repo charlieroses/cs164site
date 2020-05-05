@@ -1,0 +1,221 @@
+<html>
+  <head>
+    <title>Cryptography Lab</title>
+	 <script src="sidebar.js"></script>
+
+    <base href="https://www.cs.drexel.edu/~src322/cs164/">
+    <link rel="stylesheet" href="labs/labcss.css">
+  </head>
+  <body>
+	<h1>Cryptography Lab</h1>
+	<p>
+		Answer all questions in a <i>plain text file</i>
+		named <code>questions9.txt</code>.
+		At the top of your plain text file, include your name, student ID, and lab section.
+		Failure to do so will result in a 0.
+	</p>
+
+	<p>
+		This lab is an exercise in public key cryptography.
+	</p>
+
+	<hr>
+	<h3>Question 1 (5pts)</h3>
+	<p>	
+		Recall that public-key cryptography using the RSA (Rivest, Shamir, Adelman) 
+		scheme requires the use of public keys <i>e</i> and <i>N</i> and a private 
+		(secret) key <i>d</i>. 
+		Your group members should all visit the
+		<a href="https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/RSAWorksheetv4f.html">RSA Worksheet</a>
+		and follow these steps to get an understanding of the RSA process.
+		<br>
+		<br>
+		The first step is to choose two prime numbers, <i>p</i> and <i>q</i>. 
+		These are not your encryption and decryption codes, but are used to help 
+		find suitable codes. 
+		Experiment with numbers, until you find two 4-digit numbers that are both prime. 
+		(We choose numbers in this range so that we need not worry about overflow.)
+		<br>
+		<br>
+		In the answer box below, record your choices for <i>p</i> and <i>q</i>.
+	</p>
+	<br>
+	<h3>Question 2 (5pts)</h3>
+	<p>
+		The value of <i>N</i> is calculated. 
+		Record <i>N</i> here.
+		<i>N</i> is part of your public key.
+		How was <i>N</i> calculated?
+	</p>
+	<br>
+
+	<h3>Question 3 (5pts)</h3>
+	<p>
+		The value of <i>r</i> is also calculated.  
+		(Note that <i>r</i> is the same value that we identified as &phi;<i>(n)</i> 
+		in the lecture notes.)
+		This value is needed to find a suitable value for <i>K</i>, which is congruent 
+		to <code>1 mod r</code> (that is, <code>K mod r = 1</code>). 
+		A list of candidate values is shown in the box.
+		Choose one that is not excessively large, and try it for the value of <i>K</i>. 
+		The value of <i>K</i> may not be a prime number, 
+		because there is a need to factor <i>K</i>. 
+		Continue trying values of <i>K</i> until a suitable value is chosen. 
+		What value of <i>K</i> did you finally settle on?
+	</p>
+	<br>
+
+	<h3>Question 4 (5pts)</h3>
+	<p>
+		The value of <i>K</i> has been factored for you into two integers, <i>e</i> and <i>d</i>.
+		The values of <i>e</i> and <i>N</i> together comprise your public encryption key. 
+		You are free to share these with anyone without compromising security. 
+		However, you need to keep <i>d</i> (your private decryption key) secret!!!
+		What are your values of <i>e</i> and <i>d</i>?
+	</p>
+	<br>
+
+	<h3>Question 5 (10pts)</h3>
+	<p>
+		Test <i>e</i> and <i>d</i> for consistency. 
+		If they are consistent, you are ready to encrypt a message. 
+		Type a plaintext message in the appropriate box, then click the Encode/Decode button. 
+		The box below shows the original code translated to ASCII 
+		(and perhaps grouped together - the resulting values cannot exceed <i>N</i>.)
+		Verify that a few of the codes in the numeric text do correspond to letters 
+		in the plaintext, and show them in the answer box below.
+	</p>
+	<br>
+
+	<h3>Question 6 (10pts)</h3>
+	<p>
+		The next box shows the encrypted code. 
+		Then the process of decrypting the encrypted code (to check for correctness) begins. 
+		Verify that the boxes below this box contain information that matches the 
+		info in the first two boxes. Indicate whether the decryption was successful. 
+		(If not, it may be that the info was entered incorrectly, or <i>N</i> is too large..)
+		If the decryption is unsuccessful, repeat the process, 
+		perhaps with different choices of <i>e</i> and <i>d</i>.
+	</p>
+	<br>
+
+	<h3>Question 7 (5pts)</h3>
+	<p>
+		Your instructors have a
+		<a href="https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/files/messages.html">message</a>
+		for you, produced with the values <i>N</i>=123679, <i>e</i>=419. 
+		The authors do not need to know your decryption key in order to encrypt the message,
+		but you need to know it in order to decrypt the message. 
+		The value of the decryption key is <i>d</i>=587. 
+		To decrypt the message, you do not need to go through the whole process of 
+		choosing <i>N</i>, <i>e</i>, and <i>d</i> as in the worksheet - 
+		these need only be chosen once.
+		An 
+		<a href="https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/RSA_Express_EncryptDecrypt_v2.html">Encryption/Decryption Worksheet</a>
+		has been provided for your convenience in encrypting and decrypting messages 
+		with known keys. 
+		Use this to decrypt the message, and record the decrypted message.
+	</p>
+	<br>
+
+	<h3>Question 8 (5pts)</h3>
+	<p>
+		In the next few questions, each member of your group is to create their own 
+		public and private key, and exchange encrypted messages. 
+		(You will select your key from a fairly limited range of numbers, 
+		 so that with some effort, you may be able to guess each others' private keys.)
+		<br><br>
+		Choose values <i>N</i>, <i>e</i>, and <i>d</i> by using the first worksheet, 
+		beginning with choices of <i>p</i> and <i>q</i> chosen from the range 19..59 .
+		Record the selected values below. 
+		Do not divulge your private key, but share your public key 
+		(and modulus N) with each of your group members.
+	</p>
+	<br>
+
+	<h3>Question 9 (5pts)</h3>
+	<p>
+		Each member of your group will now create an encrypted message for another member
+		of your group, encrypted using that member's public key and modulus.
+		(The values of <i>N</i> and <i>e</i> should be shown, along with the message.) 
+		Each member should have one message created for them.  
+		Decrypt the message generated for you and put the result as an answer.
+	</p>
+	<br>
+
+	<h3>Question 10 (10pts)</h3>
+	<p>
+		For the last question we want to think about breaking the decryption.
+		If both <i>p</i> and <i>q</i> must be prime numbers in the range 19-59,
+		how many possible key sets are there?
+		How long does it take to get <i>N</i>, <i>e</i>, and <i>d</i> values from a set
+		of <i>p</i> and <i>q</i> values?
+		Could you successfully decrypt a message this way?
+		How long did this take to try all key pairs?
+		How long would this take for 100 possible primes?
+		1000?
+		10<sup>n</sup>?
+		How does th problem become more advanced as the possible values increase?
+	</p>
+	<br>
+
+	<h3>Question 11 (5pts)</h3>
+	<p>
+		Create a file on tux that contains a message to send to
+		someone in your lab.  Use the program shasum to get
+		a hash of the file.  Put the hexadecimal string for the
+		hash in your answer file.
+	</p>
+	<br>
+
+	<h3>Question 12 (10pts)</h3>
+	<p>
+		Use your private key (<i>d</i> and <i>n</i>) to encrypt the hash
+		string.  Use the recipient's public key (<i>e</i> and <i>n</i>) to
+		encrypt the contents of the message as in Question 9.
+		Decrypt the message sent to you and put its contents
+		as your answer to this question.
+	</p>
+	<br>
+
+	<h3>Question 13 (10pts)</h3>
+	<p>
+		Decrypt the signature and put the decrypted signature
+		as your answer to this question.
+	</p>
+	<br>
+
+	<h3>Question 14 (5pts)</h3>
+	<p>
+		Create a file on tux with the message you decrypted
+		and use shasum to verify the validity of the signature.
+		Did it check correctly?  What problems did you have
+		getting it to verify, if any?
+	</p>
+	<br>
+
+	<h3>Question 15 (5pts)</h3>
+	<p>
+		You've been using tux quite a bit for this class. 
+		You'll also use tux for many other classes in the future.
+		Hopefully by now you've memorized your password.
+		If not, then this is the question for you.
+		In the Week 9 folder on BBLearn, you'll find a PDF named "Crypto Lab Supplement".
+		In that you will find instructions to set up SSH keys on Tux.
+		Follow this guide.
+		I couldn't think of a question to ask in relation to this, so say something geniunely
+		nice about the class or the TAs or the professor here.
+	</p>
+	<br>
+	<hr>
+	<h2>Submission Conventions</h2>
+	<p>
+		<b>Submit on BBLearn</b>
+		<br>
+		questions9.txt : A plain text file with your answers to the questions
+	</p>
+	<br>
+
+
+ </body>
+</html>

@@ -1,0 +1,9 @@
+<html>
+<head>
+<title>Test</title>
+</head>
+<body>
+<h1>Wrong</h1>			Because <code>x</code> is less than <code>y</code>			and <code>y</code> is not 8, we don't set <code>x</code>			to be equal to <code>y</code>.			
+<p>Press <a href="tranq-1-6.html">here</a> to try again
+</body>
+</html>

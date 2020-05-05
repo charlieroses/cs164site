@@ -1,0 +1,116 @@
+<html>
+<head>
+<title>tranq Lesson 1 Part 7</title>
+</head>
+<body>
+		
+<h1>
+Oh No, Not Again
+</h1>
+		
+<p>
+			When working with the CARDIAC, conditional branching wasn't
+			the only use we made of jumping.
+			The other big reason for jumping to another place in the code is
+			to repeat some part of the code.
+			A block of code that is repeated under certain circumstances
+			is called a 
+<i>
+loop
+</i>
+.
+			In many languages, there are several different types of loop structures.
+			However, in tranquility, there is only one loop, the 
+<code>
+loop
+</code>
+.
+		
+</p>
+		
+<p>
+			A loop is quite simple to use. It will continue repeating the same block 
+			of code 
+<code>
+until
+</code>
+ a certain condition is met. The 
+<code>
+until
+</code>
+			statement defines a condition, that when true, will end the loop. Let's look
+			at the example below. Read through it and see if you can see what's happening.
+		
+</p>
+<pre>
+var i
+i : 1
+loop {
+    until .i > 100
+    iprint(.i)
+    nl()
+    i : .i + 1
+}
+</pre>
+		
+<p>
+			The above loop runs 100 times. We know this because we start with 
+<i>
+i
+</i>
+ being
+			1. The loop runs until 
+<i>
+i
+</i>
+ is greater than 100. Since we increment 
+<i>
+i
+</i>
+			in steps of 1, we run 100 times. Now, everytime we run the block, we use an integer
+			print statement (
+<code>
+iprint
+</code>
+) to print out the contents of 
+<i>
+i
+</i>
+		
+</p>
+		
+<hr>
+		What is the final value of the variable 
+<i>
+x
+</i>
+ after
+		this code is run?
+<pre>
+var x, i, j
+x : 0
+i : 0
+loop {
+    until .i &gt; 3
+    j : 0
+    loop { 
+        until .j &gt; 2
+        x : .x + .i * .j
+        j : .j + 1
+    }
+    i : .i + 1
+}
+</pre>
+		
+<script src="tranq-1-7.js"></script>
+<form method = "GET">
+			
+<p><input type=radio name=ans value=1> 0
+<p><input type=radio name=ans value=2> 5
+<p><input type=radio name=ans value=3> 15
+<p><input type=radio name=ans value=4> 27
+<p><input type="button" value="Submit Answer" onclick="check_1_7(this.form)">
+</form>
+	
+</body>
+</html>

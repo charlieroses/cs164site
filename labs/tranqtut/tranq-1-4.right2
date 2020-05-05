@@ -1,0 +1,9 @@
+<html>
+<head>
+<title>Test</title>
+</head>
+<body>
+			<h1>Correct</h1>			<p><code>x : .y + .z</code> correctly takes the contents of y and adds them			to the contents of z then makes that the contents of x.</p>			
+<p>Go on to the <a href="tranq-1-5.html">next part</a>
+</body>
+</html>

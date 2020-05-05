@@ -36,6 +36,18 @@ code
     font-size: 130%;
 }
 
+.container
+{
+	text-align: center;
+	width: 100%;
+}
+.container > *
+{
+    display: inline-block;
+    margin: 5px;
+    vertical-align: top;
+}
+
 h1
 {
    color: #072a7c;
@@ -138,8 +150,10 @@ textarea
 
 th
 {
-   text-align: center;
    background-color: #3456a3;
+	height: 30px;
+   text-align: center;
+	width: 30px;
 }
 
 #texcard

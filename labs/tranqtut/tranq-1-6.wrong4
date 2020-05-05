@@ -1,0 +1,9 @@
+<html>
+<head>
+<title>Test</title>
+</head>
+<body>
+<h1>Sorry</h1>			Because <code>y</code> is less than 10			we don't set <code>x</code> to <code>y + 2</code>.		
+<p>Press <a href="tranq-1-6.html">here</a> to try again
+</body>
+</html>

@@ -1,0 +1,198 @@
+<html>
+  <head>
+    <title>CS-164 Bio Lab</title>
+	 <script src="sidebar.js"></script>
+    <base href="https://www.cs.drexel.edu/~src322/cs164/">
+    <link rel="stylesheet" href="labs/labcss.css">
+  </head>
+  <body>
+	<h1>Easing into HTML</h1>
+	<p>
+		This week's lab builds on what you did the first week.
+		By the end of this lab, you should be more familiar with transferring
+		files back and forth between your computer and tux, editing HTML files,
+		and understanding what goes into an HTML file.
+	</p>
+	<p>
+		Make sure to answer the following lab questions in a plain text file named questions.txt
+		At the top of your plain text file, include your name, user id, and lab section.
+	</p>
+
+	<hr>
+	<h3>Question 1 (5pts)</h3>
+	<p>	
+		As with last week's lab, your first step this week is to work through a brief tutorial.
+		This one begins your introduction to HTML, the language used for web pages.  
+		It will also point you to a very extensive online resource for learning HTML and other web technologies
+		Follow
+		<a href="https://www.cs.drexel.edu/~bls96/cs164/htmltut/html.html">this link</a>
+		to begin the tutorial.
+		<br>
+		<br>
+		Were you able to get through the tutorial and make your way to the w3schools?
+		Put the link to w3schools as your answer.
+	</p>
+	<br>
+	<h3>Question 2 (10pts)</h3>
+	<p>
+		Point your browser to the page:
+		<br>
+		<br>
+		<tab5>http://www.pages.drexel.edu/~bls96/bioskel.html</tab5>
+		<br>
+		<br>
+		Your browser will have a mechanism for viewing the HTML source of the page. 
+		The exact steps, however, vary from browser to browser.
+		You may have to do some experimenting or searching online for the steps to follow on your browser.
+		View the HTML source of the file you just loaded.  
+		For an answer, state what browser you're using and what was required to view the source in that browser.
+	</p>
+	<br>
+	<h3>Question 3 (5pts)</h3>
+	<p>
+		You should notice that the second line of the file begins with the characters:
+		<br>
+		<br>
+		<tab5><code>&lt;!--</code></tab5>
+		<br>
+		<br>
+		Strings of characters enclosed in the angle brackets (&lt; and &gt;) are called <i>tags</i>
+		in HTML, and they serve as commands to the browser.
+		This particular tag (starting with &lt;!--) indicates a comment.  
+		Comments are used by one programmer (or HTML author) to another and are meant to be
+		ignored by the machine that's operating on the file (in this case, the browser).
+		What does the comment on the second line of the file say?
+	</p>
+	<br>
+	<h3>Question 4 (5pts)</h3>
+	<p>
+		Save this file to your computer with the name bio.html. 
+		Put the full path name of the file on your computer into the answer box below.
+	</p>
+	<br>
+	<h3>Question 5 (5pts)</h3>
+	<p>
+		Your next step is to copy the bio.html file from your computer to tux.
+		You'll use scp either in the command line form or as used by a GUI application such as SecureShell or CyberDuck.  
+		Once you've copied the file and gotten all the permissions correct, 
+		you should be able to load the file in your browser from tux.  
+		Describe any issues you encountered getting to this point.
+	</p>
+	<br>
+	<h3>Question 6 (5pts)</h3>
+	<p>
+		Looking again at the HTML source file, 
+		what HTML tag is used to begin the section of basic biographical information?
+	</p>
+	<br>
+	<h3>Question 7 (5pts)</h3>
+	<p>
+		What tag is used to start a bulleted list?
+	</p>
+	<br>
+	<h3>Question 8 (5pts)</h3>
+	<p>
+		What tag is used to begin each item in the list?
+	</p>
+	<br>
+ 	<h3>Question 9 (5pts)</h3>
+	<p>
+		What tag is used to end the list?
+	</p>
+	<br>
+	<h3>Question 10 (10pts)</h3>
+	<p>
+		Edit the bio.html file to fill in the information as it applies to you.  
+		There are two basic approaches you may take:
+		<ol>
+			<li>
+				You may edit the copy of bio.html that you have on your local computer.
+				Each time you want to view the changes, you will copy the file from your 
+				computer to tux and reload the page in your browser.
+				The advantage to this method is that you can use an editor that you're familiar with.
+			</li>
+			<li>
+				You may edit the copy of bio.html that is on tux. 
+				The advantage to this method is that you don't have to copy 
+				the file back to tux each time you make a change.
+			</li>
+		</ol>
+		Which method did you choose to use and why?
+	</p>
+	<br>
+	<h3>Question 11 (5pts)</h3>
+	<p>
+		Now edit your index.html file to include a link to your new bio.html file.
+		Follow the example for linking to another HTML file that's currently in your index.html file.
+		Remember that you should already have a copy of that file on your computer from last week.
+		So you again can choose whether to edit the file on your computer and copy 
+		the new version to tux or to edit directly on tux.  
+		For an answer, copy-and-paste the HTML code that you added to your index.html file.
+	</p>
+	<br>
+	<h3>Question 12 (10pts)</h3>
+	<p>
+		Return to your bio.html file to edit it again.
+		Following the example that's there, create a new section to list your hobbies.
+		Feel free to list as many as you like and to say as much as you like about each one.  
+		At least one of your list items should include a link to an external 
+		(i.e. not on www.cs.drexel.edu) web page.  
+		Did you run into any problems?  
+		What were they and how did you resolve them?
+	</p>
+	<br>
+	<h3>Question 13 (10pts)</h3>
+	<p>
+		Add at least one image on your bio page.
+		The details for handling images are not found in either the previous examples nor the tutorial.  
+		This is intentional.  
+		Part of the intent of this step is self-learning.  
+		You should do some external research to find out how to include images.  
+		(Hint: the web site that you were pointed to at the end of the tutorial is a good reference for such things.)  
+		<br>
+		<br>
+		Honors students: make the image itself a link so that when the user clicks on it, they are taken to another page.
+		This is required for honors students, not for regular students.
+		If you aren't honors, feel free to experiment with links and images.
+		<br>
+		<br>
+		For an answer, summarize how you learned about images in HTML.  
+		Did you make your image a link?  
+		Did you run into any issues getting it to work on tux?
+	</p>
+	<br>
+	<h3>Question 14 (5pts)</h3>
+	<p>
+		The last modification that you need to make to your bio.html file is to add a section with your career goals.  
+		Which browser have you been using to test all these changes?
+	</p>
+	<br>
+	<h3>Question 15 (5pts)</h3>
+	<p>
+		Different browsers sometimes interpret the HTML differently.
+		This is especially problematic if there are errors in the HTML file.
+		Sometimes a page with errors will look fine in one browser, but not another.  
+		To check this have someone else in your lab group who's using a different browser 
+		load your index.html page and follow the link to your bio.html page.  
+		If you find there are any problems fix them.  
+		Who did you ask to review your page?  
+		What browser did they use?  
+		Did you have to fix any HTML problems?
+	</p>
+	<br>
+	<hr>
+	<h2>Submission Conventions</h2>
+	<p>
+		<b>Submit on BBLearn</b>
+		<br>
+		questions4.txt : A plain text file with your answers to the questions
+		<br>
+		<br>
+		<b>Webpage on tux</b>
+		<br>
+		bio.html : Your resulting webpage you make in the lab
+	</p>
+	<br>
+
+ </body>
+</html>

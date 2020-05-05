@@ -1,0 +1,205 @@
+<html>
+  <head>
+    <title>CS-164 Farmer, Wolf, Goat, Cabbage Lab</title>
+	 <script src="sidebar.js"></script>
+    <link rel="stylesheet" href="labcss.css">
+  </head>
+  <body>
+	<h1>Puzzle of the Farmer, the Wolf, the Goat, and the Cabbage</h1>
+	<p>
+		As usual, answer all questions in a <i>plain text file</i>
+		named <code>questions3.txt</code>.
+		At the top of your plain text file, please include your name, user id, and lab section.
+		Failure to do so will result in a 0.
+	</p>
+	<p>
+		This classic problem requires that the farmer carry his wolf, goat, and
+		cabbage across a river in a leaky boat. 
+		Because the boat leaks, the farmer can only take one of the three items
+		in each trip across the river.  
+		However, if the wolf is left alone with the goat, it eats the goat.  
+		Similarly, if the goat is left alone with the cabbage, it eats the cabbage.
+		<br><br>
+		In this lab, you will create a digital logic circuit that will allow a 
+		user to attempt to solve this puzzle.  
+		You'll also publish this puzzle on your web page.
+		<br><br>
+		During lecture, we said we would be doing a number related lab this week.
+		However, we had a slight change of heart and will be doing this one instead.
+	</p>
+	<hr>
+	<h3>Question 1 (10pts)</h3>
+	<p>	
+		Start by opening the 
+		<a href="https://www.cs.drexel.edu/~bls96/cs164/logwb/logwb.html">logic workbench</a> 
+		and wiring up the inputs as illustrated here.
+	</p>
+	<center>
+		<img src="fwgcstart.png">
+	</center>
+	<p>
+		The four toggle switches each represent the four things to move across the river:
+		the farmer, the wolf, the goat, and the cabbage.  
+		When the corresponding switch is turned off, 
+		it represents the item being on the left side of the river.  
+		When it's turned on, it represents the item on the right side of the river.  
+		If your browser supports it, 
+		I recommend double clicking on the names of the switches and changing them to 
+		names that describe the items they represent.  
+		The push on switch is used to test a configuration to see whether it is 
+		a final solution, a safe state, or a dangerous state.
+
+		Your first task for this lab is to create a circuit for detecting the 
+		successful completion of the task. 
+		You should design and construct a circuit that illuminates an LED when 
+		all four are on the right side of the river. 
+		Test your circuit and ensure that the LED lights exactly when all four
+		toggle switches are on and the push button is pressed.  
+		Take a PDF capture of your circuit, name it circuit3.pdf and upload it with
+		questions3.txt .
+	</p>
+	<br>
+	<h3>Question 2 (15pts)</h3>
+	<p>
+		For using logic to express the behavior of this puzzle, 
+		we will have four Boolean variables: <i>f</i>, <i>w</i>, <i>g</i>, and <i>c</i>.
+		These correspond to the farmer, the wolf, the goat, and the cabbage, respectively.
+		For each of the variables, a True value indicates that the corresponding thing 
+		is on the right bank of the river, and a False value indicates that it is 
+		on the left bank.
+		<br><br>
+		The next step in developing this puzzle web page is to write a Boolean 
+		expression that is True when there is a potential problem on the right bank: 
+		that is when the farmer is not there and either the wolf and goat or the goat 
+		and cabbage are there.  
+		Remember, it's only a problem if the farmer is not there to keep control.  
+		Write down the truth table for the answer.
+	</p>
+	<br>
+	<h3>Question 3 (15pts)</h3>
+	<p>
+		Now that you have a truth table, you can build an equation off of this.
+		From your equation, build it in the logic workbench and make sure you test
+		all the cases. 
+		Write your boolean expression as an answer.
+	</p>
+	<br>
+
+	<h3>Question 4 (15pts)</h3>
+	<p>
+		Now we need to address the same issue on the other side of the river.  
+		In particular, we want to create a circuit that lights an LED when there 
+		is danger on the left side of the river.  
+		As before, you're asked to write down the truth table for the danger condition 
+		in this problem, and you'll be asked to create the circuit in the next.  
+		So below, write the truth table for the danger on the other side of the river.
+	</p>
+	<br>
+	<h3>Question 5 (15pts)</h3>
+	<p>
+		As before, write a boolean expression for the truth table you wrote in question 4.
+		From there, wire it up and test it in the logic workbench.
+		For the answer write your expression.
+	</p>
+	<br>
+	<h3>Question 6 (15pts)</h3>
+	<p>
+		At this point, you should have a complete circuit that simulates the actions 
+		that take place in this puzzle.  
+		Each member of your lab group should now use another person's circuit to 
+		attempt to solve the puzzle.  
+		Did you find any problems with anyone else's circuit?  
+		If so, what were they? 
+		Did anyone find any problems with your circuit?  
+		If so, what were they and how did you fix them?
+	</p>
+	<br>
+	<h3>Question 7 (5pts)</h3>
+	<p>
+		We're gonna do a quick break from the boolean algebra to prepare you for the next step.
+		You're going to complete 
+		<a href="https://www.cs.drexel.edu/~bls96/cs164/htmltut/html.html">this tutorial</a>
+		on HTML.
+		In the next step, you're going to create a webpage to display the circuit you've made.
+		To recieve credit for question 7, what is the answer to part 8 of the tutorial?
+	</p>
+	<br>
+	<h3>Question 8 (10pts)</h3>
+	<p>
+		Now that you've finished development of your puzzle and thoroughly tested it,
+		it's time to publish the result.  
+		Create a web page named <b>fwgc.html</b> in your public_html directory on tux.  
+		To get the data to paste into that file, 
+		go back to your circuit in the logic workbench.  
+		On a Mac, use command-left click to change the graphical display 
+		to the circuit data.  
+		Other other platforms, use ctrl-left click to do the same thing.  
+		When you have your circuit description in textual form, 
+		cut and paste it into the HTML file.  
+		You can then use command-left click or ctrl-left click to return to the 
+		graphical presentation of the circuit.
+		<br><br>
+		The next step is to enhance the HTML file so that it's more than just the logic workspace.
+		In particular, you should use the h1 tag to create a title for your page.
+		Then you should include some text (with proper HTML markup) 
+		that describes what the puzzle is and gives instructions for the user to attempt to 
+		solve the puzzle.  
+		Use the other HTML files you've worked with in lab as examples to follow 
+		for the HTML markup.
+		<br><br>
+		To view your results, you'll also need to download some JavaScript and CSS files
+		into the same directory where you are editing your HTML file.  
+		The files you'll need are:
+		<ul>
+			<li>jquery-2.1.1.min.js</li>
+			<li>simcir-basicset.css</li>
+			<li>simcir-basicset.js</li>
+			<li>simcir-library.js</li>
+			<li>simcir.css</li>
+			<li>simcir.js</li>
+		</ul>
+		On tux, copy all the files from the directory <code>~bls96/public_html/cs164/logwb</code> to your 
+		public_html directory to get these files.
+		There are also sample files in that directory that you can look at to embed your circuit.
+		<br><br>
+		For a little more help in setting up your html document, go to
+		<a href="https://www.cs.drexel.edu/~bls96/cs164/logwb/sample.html">this webpage.</a>
+		It has a bit more on how to set up the HTML and embed your circuit.
+		<br><br>
+		Finally, edit your public_html/index.html file to have a link to 
+		the new file with your circuit.  
+		For an answer, give the URLs for both your fwgc.html page and your home page.
+	</p>
+	<br>
+	<h3>Extra Credit (5pts)</h3>
+	<p>
+		If you are in the honors section, this is not extra credit.
+		Failure to answer this question will result in a loss of 5 points.
+		If you do not have an H in your lab section nuber on BBLearn, this is extra credit.
+	</p>
+	<p>
+		If you finish the main assignment and want to do a little more for a few points of 
+		extra credit, then clean up the way the circuit workspace looks.  
+		In particular, figure out how to remove the toolbar of circuit elements that 
+		appears on the left side of the workspace.  
+		Also change the size of the workspace so that it shows the full circuit with 
+		just a small amount of blank space around it. 
+		Describe below what you did to figure out the changes that needed to be made.
+	</p>
+	<hr>
+	<h2>Submission Conventions</h2>
+	<p>
+		<b>Submit on BBLearn</b>
+		<br>
+		questions3.txt : A plain text file with your answers to the questions
+		<br>
+		circuit3.pdf : A PDF of a screenshot of the circuit from Question 1
+		<br>
+		<br>
+		<b>Webpage on tux</b>
+		<br>
+		fwgc.html : Your resulting webpage you make in Question 8
+	</p>
+	<br>
+ </body>
+</html>

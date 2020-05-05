@@ -1,0 +1,9 @@
+<html>
+<head>
+<title>Test</title>
+</head>
+<body>
+			<h1>You forgot the dots</h1>			<p><code>x : y + z</code> take the addresses of y and z and adds those and makes			it the contents of x. So instead of adding the contents of y and z, you just added 			y and z.</p>			
+<p>Press <a href="tranq-1-4.html">here</a> to try again
+</body>
+</html>

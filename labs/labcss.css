@@ -1,0 +1,48 @@
+a
+{
+	color: #0e3793;
+}
+
+body
+{
+	background-color: rgb(200,200,200);
+	font-size: 115%;
+}
+
+code
+{
+    font-size: 120%;
+}
+
+h1
+{
+	color: #072a7c;
+}
+
+
+h2
+{
+	color: #072a7c;
+}
+
+
+h3
+{
+	color: #072a7c;
+	padding-left: 5mm;
+}
+
+tab5
+{
+   padding-left: 5em;
+}
+
+table, th, td
+{
+  border: 1px solid black;
+}
+
+td, th
+{
+	padding: 1mm;
+}

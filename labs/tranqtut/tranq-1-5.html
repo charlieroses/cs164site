@@ -1,0 +1,162 @@
+<html>
+<head>
+<title>tranq Lesson 1 Part 5</title>
+</head>
+<body>
+		
+<h1>
+Smooth Operators
+</h1>
+		
+<p>
+			Now let's turn our attention to the expressions that are on the
+			right-hand side of assignments.
+			In this tutorial, we will focus mostly on the basic arithmetic
+			operations.
+			Two of the most basic are addition and subtraction, which, as
+			you can probably guess, are notated with the `+' and `-' characters.
+			So the expression 
+<code>
+a+b
+</code>
+ in Tranquility will 
+<i>
+evaluate
+</i>
+			to be the sum of the two variables 
+<i>
+a
+</i>
+ and 
+<i>
+b
+</i>
+.
+			Evaluating an expression means that we calculate the value of
+			that expression at that point in time.
+		
+</p>
+		
+<p>
+			Expressions can be used anywhere a value such as a constant
+			or a variable can be used.
+			For our purposes here, we'll focus on their use on the right-hand
+			side of assignments.
+			Consider the statement:
+			
+<pre>
+c : .a - .b
+			
+</pre>
+			Although we might think of this as a single step in our program,
+			it's actually several steps inside the machine:
+			
+<ol>
+				
+<li>
+ Fetch the contents of the variable 
+<i>
+a
+</i>
+.
+				
+<li>
+ Handle 
+<i>
+b
+</i>
+				
+<ol type="a">
+					
+<li>
+ Fetch the contents of 
+<i>
+b
+</i>
+.
+					
+<li>
+ Subtract the contents of 
+<i>
+b
+</i>
+ from that of 
+<i>
+a
+</i>
+.
+				
+</ol>
+				
+<li>
+ Store the result in 
+<i>
+c
+</i>
+.
+			
+</ol>
+		
+<p>
+			We've divided the steps as shown to highlight certain aspects
+			of the sequence.
+			To start with, depending on the machine design, Step&nbsp;2
+			might be handled as a single step, or as two separate steps,
+			2a and 2b.
+			The second thing to highlight is that Steps&nbsp;1 and&nbsp;2
+			together comprise the evaluation of the expression 
+<code>
+.a-.b
+</code>
+.
+			This is done prior to the assignment getting carried out.
+			It is important to remember that's the sequence of the timing of any
+			assignment statement.
+			First, the expression on the righ-hand side is evaluated, and then
+			the result is stored in the left-hand side.
+			The details of the sequence lead us directly into understanding
+			how such a statement is executed on the computer.
+			Using CARDIAC as an example, the statement:
+			
+<pre>
+c : .a - .b
+			
+</pre>
+			might be compiled to the instruction sequence:
+			
+<pre>
+     CLA   a
+     SUB   b
+     STO   c
+			
+</pre>
+		
+<p>
+			Before moving on, we should mention some of the other operators
+			that can be used in expressions.
+			The asterisk (*) character is used for multiplication, slash (/) is used
+			for division, and percent (%) is used for the remainder after division
+			(or modulus).
+	
+		
+<script src="tranq-1-5.js"></script>
+<form method = "GET">
+			Which of the following Tranquility statements would correspond to the following
+			CARDIAC assembly language code:
+			
+<pre>
+     CLA   y
+     ADD   y
+     STO   x
+			
+</pre>
+			
+<p><input type=radio name=ans value=1> <code>x : y + y</code>
+<p><input type=radio name=ans value=2> <code>y : .x + .x</code>
+<p><input type=radio name=ans value=3> <code>x : 2 * y</code>
+<p><input type=radio name=ans value=4> <code>x : .y + .y</code>
+<p><input type="button" value="Submit Answer" onclick="check_1_5(this.form)">
+</form>
+	
+</body>
+</html>

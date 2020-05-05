@@ -1,0 +1,9 @@
+<html>
+<head>
+<title>Test</title>
+</head>
+<body>
+<h1>That's Right</h1>			<p>The STO instruction changes a memory location by storing			the accumulator there.  If the memory location contains a variable,			this is the same as assigning to the variable.		
+<p>Go on to the <a href="tranq-1-4.html">next part</a>
+</body>
+</html>

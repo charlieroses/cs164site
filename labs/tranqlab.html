@@ -1,0 +1,122 @@
+<html>
+  <head>
+    <title>Introduction to Tranquility</title>
+	 <script src="sidebar.js"></script>
+    <base href="https://www.cs.drexel.edu/~src322/cs164/">
+    <link rel="stylesheet" href="labs/labcss.css">
+  </head>
+  <body>
+	<h1>Lab 6 - Introduction to Tranquility</h1>
+	<p>
+		As usual, answer all questions in a <i>plain text file</i>
+		named <code>questions6.txt</code>.
+		At the top of your plain text file, include your name, student ID, and lab section.
+		Failure to do so will result in a 0.
+	</p>
+
+	<p>
+		This is one of my favorite simple tasks when learning a new language.
+The problem is to find all 3-digit numbers that are equal to the sum
+of the cubes of the digits.
+	</p>
+
+	<hr>
+	<h3>Question 1 - Tutorial (5pts)</h3>
+	<p>	
+		Before starting the remainder of the lab, here's a brief
+<a href="http://cs.drexel.edu/~src322/cs164/labs/tranqtut/tranq.html">tutorial</a>
+on Tranquility to go through.
+List any issues you had with the tutorial below.
+	</p>
+	<br>
+	<h3>Question 2 - Algorithm (20pts)</h3>
+	<p>
+		The first step in development is to write an algorithm that
+computes the set of 3-digit numbers that are equal to the sum of the
+cubes of the digits.
+As a hint, there are 4 such numbers.
+There are a couple of different ways of structuring the loop(s) for this task.
+Feel free to use the approach that feels most natural to you.
+The two general approaches can broadly be described as:
+</p>
+<ul>
+<li> Do I take each of the 900 numbers, dissect it, and test to see if it fits the criteria?</li>
+<li> Do I construct each of the 900 numbers from their digits and test to see if they fit?</li>
+</ul>
+<p>
+Having written this both ways, I'm of the opinion that the
+two approaches are equally easy/difficult.
+Don't run to Google to find a "solution."
+Your brain is a much more reliable resource.
+If you're not to that point yet, remember that one of the purposes
+of college is to help you get to where you have more confidence
+in your own brain than you do in what others tell you.
+<br><br>
+Which approach did you take?
+Why did you take that approach?
+Write out the algorithm in more detail in English.
+Think about every step you have to take.
+</p>
+	<br>
+	<h3>Question 3 - Starting the Implementation (10pts)</h3>
+	<p>
+Now that you've written the algorithm, your next step is to
+design how your data will be organized.
+For each of the data items described in your algorithm list its
+name and a short description of its role.
+	</p>
+	<br>
+	<h3>Question 4 - Write the code (15pts)</h3>
+	<p>
+You now have an algorithm and your data structures for
+this problem.
+These two items together are what make a program.
+So it's time to translate what you've done into Tranquility.
+Write your program in a file called <tt>cubes.t</tt> and
+compile it with the <tt>tranqc</tt> command on tux.
+Fix any problems that the compiler reports.
+What errors did the compiler report?
+How did you fix them?
+	</p>
+	<br>
+	<h3>Question 5 - Testing your program (15pts)</h3>
+	<p>
+Getting a program to compile without errors isn't the endpoint
+of programming; it's just the beginning.
+Create a file called <tt>cubes.html</tt> that loads the machine
+language code created by the Tranquility compiler.
+Follow the examples in class and the "Tranquility Programmer's
+Manual."
+This is where the real work of debugging begins.
+Any number of possible errors can arise.
+It's at this point that it's critical to be able to trace what
+the program should do and verify that it is working correctly.
+	</p>
+	<p>
+After you think you've got it working, try someone else's implementation and see if they got the same numbers you did.  Whose did you try, and did they get the same results?
+	</p>
+	<p>
+What are the 3-digit numbers that are the sum of the cubes of the digits?
+	</p>
+	<p>
+What is the URL for your program?
+	</p>
+	<br>
+	<hr>
+	<h2>Submission Conventions</h2>
+	<p>
+		<b>Submit on BBLearn</b>
+		<br>
+		questions6.txt : A plain text file with your answers to the questions
+		<br>
+		cubes.t (35pts) : The source code for your program
+		<br>
+		<b>Webpage on tux</b>
+		<br>
+		cubes.html : Your resulting webpage you make
+	</p>
+	<br>
+
+
+ </body>
+</html>

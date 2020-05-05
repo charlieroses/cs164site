@@ -1,0 +1,172 @@
+<html>
+  <head>
+    <title>CS-164 Finite State Machines</title>
+	 <script src="sidebar.js"></script>
+    <base href="https://www.cs.drexel.edu/~src322/cs164/">
+    <link rel="stylesheet" href="labs/labcss.css">
+  </head>
+  <body>
+	<h1>Lab 7 - Finite State Machines</h1>
+	<p>
+		Answer all questions in a <i>plain text file</i>
+		named <code>questions7.txt</code>.
+		At the top of your plain text file, include your name, student ID, and lab section.
+		<code>fsm.t</code> should be a separate .t file. 
+		Do not add a .txt extension.
+		Your source code should be a plain .t file.
+		Use <code>scp</code> to retrieve this file from tux.
+		Failure to do so will result in a 0.
+	</p>
+
+
+	<hr>
+	<h3>Question 1 - The Only Question (25pts)</h3>
+	<p>	
+		Suppose you're working for some large unnamed online retail company, let's call them Nile.  
+		Everyone has agreed that it would be a good idea to weigh all the boxes that make up an order.  
+		Your task is to develop the system that gathers the data.  
+		After considering it for a while, you have settled on the following:
+	</p>
+	<ul>
+		<li>Each order has a barcode that is to be scanned at the beginning and end of each order.</li>
+		<li>Each package has a barcode that is to be scanned prior to its weight being sent.</li>
+		<li>For each input (barcode or weight) either a red or green light is turned on for a second as feedback to the operator.</li>
+		<li>The green light indicates that the input was accepted.</li>
+		<li>The red light indicates that an input was out of sequence and the operator needs to repeat some part of the operation.</li>
+	</ul>
+	<p>
+		The normal procedure for the operator is to start processing an order by scanning the order's barcode.  
+		Then for each package in the order, the operator scans the package barcode, and pushes the weight button.
+		Once all the packages are weighed, the operator scans the order barcode again to close the order.  
+		At each of those steps, if the operator has taken the correct action, a green light is shown.  
+		But if the operator presents one of the inputs out of order, the red light is shown.
+	</p>
+	<p>
+		So the question is how do we know which light to illuminate?  
+		The answer comes down to knowing how we got to our current situation and what input we receive.  
+		If we're in the situation where we're currently processing and order and the last thing we got was a package barcode,
+		then getting a weight should result in a green light. 
+		On the other hand if the last thing we got was a weight, then another weight should result in a red light.
+	</p>
+	<p>
+		In a state machine the state summarizes the past and tells us what our current situation is.  
+		Then the current state and the new input tell us what to do next.  
+		In this situation, the what to do next is what light to turn on and what new state to go to.  
+		Of course, we need to account for all the combinations of state and input.  
+		One way to express this is with a table such as:
+	</p>
+	<center>
+	<table>
+		<tr>
+			<th></th>
+			<th>0</th>
+			<th>1</th>
+			<th>2</th>
+		</tr>
+		<tr>
+			<th>O</th>
+			<td>1/G</td>
+			<td>0/G</td>
+			<td>0/R</td>
+		</tr>
+		<tr>
+			<th>P</th>
+			<td>0/R</td>
+			<td>2/G</td>
+			<td>1/R</td>
+		</tr>
+		<tr>
+			<th>W</th>
+			<td>0/R</td>
+			<td>1/R</td>
+			<td>1/G</td>
+		</tr>
+	</table>
+	</center>
+	<p>
+		In this particular case, it so happens that we have three states and three inputs, but they're not always the same.  
+		We can describe the states as follows:
+	</p>
+	<ul>
+		<li>0 : Not currently processing an order</li>
+		<li>1 : Processing and order waiting to process a package</li>
+		<li>2 : Processing a package waiting for the weight</li>
+	</ul>
+	<p>
+		Similarly, the inputs are:
+	</p>
+	<ul>
+		<li>O : The order barcode</li>
+		<li>P : The package barcode</li>
+		<li>W : The package weight</li>
+	</ul>
+	<p>
+		In the cells of the table, each entry contains a number and a letter. 
+		The number gives the new state and the letter is which color of light to show.  
+		For example, if the machine is in state 1 and gets an O input, then the machine changes to state 0 and shows the green light. 
+		These changes in state are called transitions.  
+		This particular transition represents the operator scanning the order barcode after processing all the packages to close out the order.
+	</p>
+	<p>
+		Another common way of illustrating a state machine is a diagram where the states are shown as circles and the transitions are shown as arrows.  
+		The machine discussed here can be illustrated as follows:
+	</p>
+	<center>
+		<img src="labs/fsm.png">
+	</center>
+	<p>
+		Now, let's turn to how to implement a state machine in Tranquility code.  
+		One of the easiest ways to implement a state machine is to define a function for each input.  
+		Inside the function, a series of if statements test the current state and do the state updates.  
+		In terms of the table shown above, this function implements one row of the table.  
+		Based on that table, a function for handling the weight would look like:
+	</p>
+<pre>
+fun proc_weight() {
+    if .state == 0 {
+        state : 0
+        do_red()
+    }
+    else if .state == 1 {
+        state : 1
+        do_red()
+    }
+    else if .state == 2 {
+        state : 1
+        do_green()
+    }
+}
+</pre>
+	<p>
+		In some cases, the state change in the if statement is redundant as the machine actually stays in the same state.
+		Those assignments could safely be omitted.
+		Also note that the state variable needs to be declared globally so that it is shared among all of the functions.
+	</p>
+	<p>
+		Your task is to complete the implementation of this state machine.  
+		Use a button for each of the three inputs, and use a text area to report which light is on.
+	</p>
+	<p>
+		Put the URL to your web page for this project as an answer.
+		The webpage should be named fsm.html.
+	</p>
+	<br>
+	<hr>
+	<h2>Submission Conventions</h2>
+	<p>
+		<b>Submit on BBLearn</b>
+		<br>
+		questions7.txt : A plain text file with your website URL (25pts)
+		<br>
+		fsm.t : Your Tranquility source code (75pts)
+		<br>
+		<br>
+		<b>Webpage on tux</b>
+		<br>
+		fsm.html : Your resulting webpage you make
+	</p>
+	<br>
+
+
+ </body>
+</html>

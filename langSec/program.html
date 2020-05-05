@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Programming Languages</title>
+	<base href="https://www.cs.drexel.edu/~src322/cs164/">
+    <script src="sidebar.js"></script>
+    <script src="langSec/langJS.js"></script>
+    <link rel="stylesheet" href="langSec/langCSS.css">
+  </head>
+  <body>
+    <div class="sideBar" id="sideBar">
+    </div>
+    <script>setupSidebar();</script>
+    <div class="mainInfo">
+      <div class="prevnextcontent">
+        <div class="leftprev">
+          <a href="langSec/markup.html">Previous Section</a> : Markup Languages : 6.2
+        </div>
+        <div class="rightnext">
+          6.4 : Tranquility : <a href="langSec/tranq.html">Next Section</a>
+        </div>
+        <br>
+      </div>
+      <hr>
+      <h1>6.3 : Programming Languages</h1>
+      <hr>
+	  <p>
+        So there's a million programming languages out there, with a million
+        different concepts and a million different syntaxes.
+        Obviously, I can't go over all of them.
+		I'm gonna go over a few different types of programming approaches, and
+		and more general things that are important in all languages.
+		For a more in depth tutorial on Tranquility, check out the
+		<a href="labs/tranqtut/tranq.html">tutorial</a> from Lab 6.
+      </p>
+	  <hr>
+	  <h3>Program Flow</h3>
+	  <p>
+		The most important thing to know in program flow, is the progression of code.
+		As with the CARDIAC, the computer follows the code line by line until 
+		it is told not to.
+		Typically by a loop or an if statement.
+	  </p>
+	  <p>
+		<b>If statements</b> tell the computer to run a section of code, if a statment
+		is true.
+		This is seen with the CARDIAC command TAC.
+		The basic idea of an if statement is that only the if or the else runs.
+		Both do not run.
+		The boolean expression cannot be both true and false.
+		Just like with TAC, the program will not jump and do the statement directly
+		following it.
+	  </p>
+<pre>
+if ( a boolean statment) {
+    sprint("Do these statments if the boolean expression is true")
+}
+else {
+    sprint("Do these statments if the boolean expression is false")
+}
+</pre>
+	  <p>
+		<b>Loops</b> are control statements that repeat code.
+		We could rewrite the same code multiple times in a row, but that gets tedious,
+		especially when we want to run code upwards of thousands of times.
+		So we can write a loop that runs code multiple times until a certain condition is
+		met. The syntax in Tranquiliy, the programming language we will use in this class,
+		is as following.
+	  </p>
+<pre>
+loop {
+    until ( a boolean statement)
+    sprint("Do these statements until the boolean statement is true")
+}
+</pre>
+	  <p>
+		<b>Functions</b> are blocks that we use to organize our code.
+		We can use these blocks repeatedly without copying and pasting code.
+		Similar to functions in math, we can put values in and get a new value out.
+		The values we put into a function are called the parameters.
+		Just as in functions in math, you can only get one value out of a function.
+		The output value is called the <tt>return</tt> value and requires a
+		<tt>return</tt> statement to be outputted. 
+		The <tt>return</tt> statement will end the function and cease it's 
+		running whether there are statements after it or not.
+		The Tranquility syntax for functions is as follows.
+	  </p>
+<pre>
+fun functionName( optional list of parameters ) {
+    sprint("Perform these statements")
+    return value # This is also optional
+}
+</pre>
+	  <p>
+		Functions are special in that there are two parts.
+		There is the block of code that is the function itself, and then the call
+		to that function.
+		Calling a function will execute the code within the function and, if there's
+		a return statement, will return the value in place of the function.
+		When calling the function, you will provide the values for the parameters.
+		Different languages have different syntax for calling functions.
+		In Tranquility, you use the following.
+	  </p>
+<pre>
+functionName( values for parameters )
+</pre>
+	  <p>
+		Now, sometimes, we want to reference a function without actually calling it.
+		We do this a lot with buttons.
+		We attach functions to buttons to call later, when the button is pressed.
+		The syntax for that in Tranquility would be the following.
+		As you can see, we call the function but without the parentheses and parameters.
+		This allows us to pass a reference to a function without calling it.
+	  </p>
+<pre>
+button("This is a button", functionName )
+</pre>
+	  <p>
+		There is a lot more to programming than these few topics.
+		Overall, this is more than enough for this class.
+		All the assignments in this class can be accomplished using the aforementioned
+		topics.
+	  </p>
+      <hr>
+      <div class="prevnextcontent">
+        <div class="leftprev">
+          <a href="langSec/markup.html">Previous Section</a> : Markup Languages : 6.2
+        </div>
+        <div class="rightnext">
+          6.4 : Tranquility : <a href="langSec/tranq.html">Next Section</a>
+		</div>
+        <br>
+      </div>
+    </div>
+  </body>
+</html>

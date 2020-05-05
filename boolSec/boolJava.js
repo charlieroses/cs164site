@@ -157,11 +157,11 @@ function aq3Submit()
 
 	if(answer.toLowerCase() == "or")
 	{
-	    document.getElementById("aq3Out").innerHTML = "Correct! If we apply OR to both the carries";
+	    document.getElementById("aq3Out").innerHTML = "Correct! If we apply OR to both the carries we can combine the carries without losing any information";
 	}
 	else if(answer.toLowerCase() == "xor" || answer.toLowerCase() == "eor")
 	{
-	    document.getElementById("aq3Out").innerHTML = "Close but not quite. XOR seems too exclusive. We want to include the case when there's more than one 1.";
+	    document.getElementById("aq3Out").innerHTML = "Almost! Xor would work, but it's a very complex gate, and we don't need something that complicated.";
 	}
 	else
 	{

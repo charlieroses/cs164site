@@ -1,0 +1,567 @@
+<html>
+  <head>
+    <title>CS-164 Tux Lab</title>
+	 <script src="sidebar.js"></script>
+    <base href="https://www.cs.drexel.edu/~src322/cs164/">
+    <link rel="stylesheet" href="labs/labcss.css">
+  </head>
+  <body>
+	<h1>Drexel Computing Environment</h1>
+	<p>
+		Are you ready kids?
+		<i>(Aye aye captain!)</i>
+		<br>
+		<br>
+		You are going to answer these questions in a plaintext file called <b>questions.txt</b>.
+		DO NOT use Microsoft Word.
+		DO NOT use TextEdit.
+		If you submit a docx or pdf or rtf file or ANYTHING that isn't a <u>PLAIN TEXT FILE</u> you will recieve a 0 for the lab.
+		Write all your answers in a <i>plain text file</i>.
+		You can use Notepad or SublimeText or a GUI text editor.
+		We would prefer you use a command line editor like nano or vim or emacs, but we don't talk about those til later in the lab,
+		so it is acceptable to not use that option until you learn it.
+		Just please, put your answers in a <b><u><i>plain text file.</i></u></b>
+		<br><br>
+		You will submit questions.txt on BBLearn under the Lab1 assignment.
+		At the top of your plain text file, make sure to include your name, user id, and lab section.
+	</p>
+
+	<hr>
+	<h3>Question 1 - Make Friends (5pts)</h3>
+	<p>
+		Upon entering the lab, the TAs may pass around an attendance sheet to sign. 
+		The students with whom you are sitting are your lab partners for today. 
+		You and your lab partners are to work together on this lab, 
+		although each of you will use Blackboard for submitting answers to the questions on your own Blackboard account. 
+		For each question, you should each finish answering the question before moving ahead to the next question. 
+		If you or your lab partner(s) have problems completing a step, 
+		try working together on it. 
+		Notify your lab assistant if problems persist.
+		<br><br>
+		Introduce yourself to your lab partners. 
+		Each of you should write down your name and userid.
+		For this question, write down who you worked on this lab with, and their user ids.
+	</p>
+	<br>
+	<h3>Question 2 - Meet your TAs (10pts)</h3>
+	<p>
+		Your TAs should have identified themselves by writing their names and email addresses on the board. 
+		If they have not done this, hound them endlessly until they do. 
+		Record your TAs names and email addresses for question 2, 
+		and also somewhere for your future reference throughout the term. 
+		(Note: some reassignment of teaching assistants may occur before next week.)
+	</p>
+	<br>
+	<h3>Question 3 - Your Drexel Account (10pts)</h3>
+	<p>
+		You should already have been issued a userid and password and an email address.
+		We will refer to it as your userid here, 
+		but you may hear is called your Drexel One ID or login or your single signon ID or login.  
+		It is what you used to log into this Blackboard session to do this lab.  
+		It also permits you access to file space on the tux server (also referred to as the cs.drexel.edu server). 
+		<br><br>
+		You should recognize that the Blackboard server is a different machine than the cs.drexel.edu server, 
+		and you have accounts on both machines. 
+		(See picture below.) 
+		The Blackboard server is used for managing this course (CS 164): 
+		your lab interactions are stored on this machine; 
+		your homework assignments and labs are submitted for grading by your instructors and teaching assistants; 
+		and your grades for this course will be stored on this machine. 
+		The personal nature of these activities explains the need for your userid and password on this server.
+		<br><br>
+		The Blackboard server does not permit your files to be accessed via the World Wide Web.
+		For this, you need to use the cs.drexel.edu server.
+	</p>
+
+	<center>
+		<img src="labs/WebCT.png">	
+	</center>
+	<p>
+		Your userid on tux permits you to create and maintain your own web site. 
+		While creation of a home page, etc. is beyond the extent of today's lab, 
+		you will create the site and post a public file on it. 
+		In this section you will perform some steps that should only need to be
+		done once for the lifetime of your account, to set it up properly. 
+		In later sections, you will create a file and post it at your site.
+		<br><br>
+		In order to create a Tux account, you should have recieved an email from Brian Bijeau.
+		It is an encrypted email.
+		Here you will be given a temporary password.
+		If you did not get that email, email Brian Bijeau at bjb344@drexel.edu
+	</p>
+	<p>
+		Describe any problems or struggles you had getting into Tux.
+		If there were no problems, write "No Problems".
+	</p>
+	<br>
+	<h3>Question 4 - Log Into Tux (10pts)</h3>
+	<p>
+		<b>Step 1: Cloak and Dagger.</b>
+		Now that you have created your tux account, 
+		it's time to log into it and issue some commands.  
+		The protocol we will be using to communicate between your computer and tux is called the Secure Shell (SSH).  
+		This system supports multiple methods of authenticating your identity
+		with the server and provides a mechanism for encrypting all of the communication
+		between machines.  
+		There exist SSH implementations for nearly any platform you would like to use, 
+		including Linux, BSD, Mac OS X, Windows, Android, iOS, Plan9, etc.
+		<br><br>
+		If you are running any of the UNIX variants (e.g. Linux, BSD, or Mac OS X), 
+		you already have an implementation of SSH installed.  
+		For most distributions of these systems, the implementation included is called OpenSSH. 
+		This package has also been ported to Windows by the Microsoft PowerShell developers. 
+		If you are running Windows, you should already have OpenSSH installed.
+		If you do not have OpenSSH, you can download and install OpenSSH from:
+		<br><br>
+		<a href="http://github.com/PowerShell/Win32-OpenSSH/releases">http://github.com/PowerShell/Win32-OpenSSH/releases</a>
+		<br><br>
+		or you can install OpenSSH as part of the Windows Subsystem for Linux.  
+		If you wish to install the Windows Subsystem for Linux, 
+		<a href="https://www.cs.drexel.edu/~bls96/cs164/winlin.html">this page</a> will walk you through the process.  
+		<br><br>
+		For all environments, open a terminal (command) window and issue the command:
+		<br><br>
+		<tab5><code>ssh </code><i>userid</i><code>@tux.cs.drexel.edu</code></tab5>
+		<br><br>
+		putting your userid before the @ sign.  
+		On Windows, if you are running the power shell instead of the classic command prompt,
+		you'll need to prefix the ssh command with ./ (i.e. <code>./ssh</code> ...). 
+		The result of this should look like:
+	</p>
+	<center>
+		<img src="labs/tux_login.png">
+	</center>
+
+	<p>
+		Note that the dialog regarding the server's fingerprint will only appear 
+		the first time to connect to that host.  
+		All subsequent times you log in, you'll go directly to the password prompt.  
+		Also note that the details of the login in message printed before 
+		the command prompt will differ for each person.
+		<br><br>
+		If any member of your team is unable to get to this point, stop and get help from a TA.
+		<br><br>
+		<b>Step 2: Server Farms.</b>  
+		Tux is actually a set of systems and you won't always connect to the same one every time.  
+		The last line printed on the screen is shown above as bls96@tux2:~$.  
+		This the prompt for you to type a command to the shell you selected earlier.  
+		The tux2 part of the prompt indicates that I'm logged into the second member of the collection.  
+		Which tux instance did you log in to?
+		<br><br>
+		<b>Step 3: Running Nonstop.</b>  
+		At the prompt use the command uptime to find out how long it's been since this tux was last rebooted.  
+		How long has this tux been up?  
+		Record your answer.
+	</p>
+
+	<br>
+	<h3>Question 5 - Scavenger Hunt (5pts)</h3>
+	<p>
+ 		At this point, you are logged into tux and ready to create a web site.  
+		Before we go through the steps to create it, 
+		there are several commands that will be useful to you in the process.  
+		We begin with a brief summary of them:
+		<br><br>
+		<b>cat :</b> Concatenate files and print them to the standard output.
+		<br>
+		<b>cd :</b> Change current directory.  This is used to move to a different directory (folder).
+		<br>
+		<b>chmod :</b> Change file mode.  You use this command to change what protections are applied to a file or directory.
+		<br>
+		<b>cp :</b> Copy a file.
+		<br>
+		<b>logout :</b> Terminate the connection to tux and return to the local command prompt on your computer.
+		<br>
+		<b>ls :</b> List the contents of a directory.
+		<br>
+		<b>man :</b> Print out the manual page about a command.
+		<br>
+		<b>mkdir :</b> Create a new directory.
+		<br>
+		<b>mv :</b> Move a file.
+		<br>
+		<b>nano :</b> Edit a file.
+		<br>
+		<b>rm :</b> Remove a file.
+		<br>
+		<b>uptime :</b> Print out how long the system has been up and how much load it currently has.
+		<br><br>
+		For a larger list of commands, check out
+		<a href="https://www.cs.drexel.edu/~kschmidt/Ref/unix_reference.html">Kurt's Unix for Newbies</a>
+		<br><br>
+		Now this is a lot to take in all at once.
+		Don't try and memorize these commands.
+		Learn them by using them.
+		Test them out.
+		Practice with them.
+		<br><br>
+		You used the uptime command in the last question, 
+		and it is used by itself with no other information.
+		Most of the other commands take one or two arguments that specify which files 
+		or drectories they affect.  
+		For example, if you want to learn more about the uptime command, you can issue the command:
+		<br><br>
+		<tab5><code>man uptime</code></tab5>
+		<br><br>
+		and you'll be treated to a description of the command, 
+		information about the various options,
+		and how to interpret the output of the command.  
+		The same is true of most commands on the system.
+		Issuing the command man giving it the name of another command as an argument
+		will result in documentation about that command.
+		You can even get documentation about the man command by typing
+		<br><br>
+		<tab5><code>man man</code></tab5>
+		<br><br>
+		So for this question, we're gonna send you on a scavenger hunt.
+		This will get you used to navigating a file system via command line.
+		Helpful commands for this are ls, cat, and cd.
+		At the end of your little scavenger hunt, you'll find a secret message.
+		The secret message is your answer for the question.
+		Enter the command below to start your quest.
+		<br><br>
+		<tab5><code>cd ~src322/cs164maze</code></tab5>
+		<br><br>
+		Now, start looking through the files in that directory using the commands from above.
+	</p>	
+	<br>
+	<h3>Question 6 (10pts)</h3>
+	<p>
+		This and the next few questions will walk you through the process of 
+		creating an initial web page.  
+		<br><br>
+		<b>Step 1:</b> The first thing to do is to make some configurations on Tux.
+		Do this with the command:
+		<br><br>
+		<tab5><code>~bls96/cs164/bin/cs164setup</code></tab5>
+		<br><br>
+		The command will not print anything out if you do it correctly.
+		It is important to note, just because something is not printing out,
+		does not mean something is incorrect.
+		<br><br>
+		<b>Step 2:</b> Issue the command:
+		<br><br>
+		<tab5><code>ls</code></tab5>
+		<br><br>
+		to get a list of the current contents of your home directory.  
+		This command will probably return without printing anything, 
+		indicating that there are currently no files or directories in your home directory.  
+		(It turns out this is not strictly true, but the difference is unimportant for now.)
+		<br><br>
+		<b>Step 3:</b> The convention for web servers on UNIX is that web pages for 
+		individual users should all be in a directory called public_html.
+		Assuming you have no such directory already, then create one with the command:
+		<br><br>
+		<tab5><code>mkdir public_html</code></tab5>
+		<br><br>
+		<b>Step 4:</b> Next, we will set some characteristics of our new directory.
+		Start by issuing the command:
+		<br><br>
+		<tab5><code>ls -l</code></tab5>
+		<br><br>
+		This is the same command we used earlier to see that there were no files in 
+		the home directory except that this time we've added the -l option.  
+		This option tells ls to print out extra information about each file in the list.  
+		You should get a line of output that looks something like:
+		<br><br>
+		<tab5><code>drwxrwxr-x 2 qqq42 qqq42  6 Sept 25 11:38 public_html/</code></tab5>
+		<br><br>
+		Although you won't use all these details directly, 
+		understanding what's happening under the covers is always a good thing.  
+		The first character on the line is d which indicates that the item is a directory.  
+		Following the d are the characters rwxrwxr-x.
+		These 9 characters are divided into 3 sets of 3.
+		Each set is composed of some combination of r, w, x, and -.
+		An r indicates that the file can be read, a w that it can be written, 
+		and an x that it can be executed or searched in the case of a directory.  
+		Places where the - character appears indicate that the corresponding operation is not permitted.
+		The three groups list the privileges for the owner, the group, and everyone else (called the world).
+		The next item in the line is the number of links to the file, 
+		which has to do with the internal design of the file system.
+		The third item on the line is the name of the owner of the file, 
+		and the fourth is the group that owns the file. 
+		Following the ownership information is the size of the file, the last modification date of the file, and its name.
+		<br><br>
+		For an answer, enter the line you got as a result of the <code>ls -l</code> command.
+	</p>
+
+	<br>
+	<h3>Question 7 - Create a Website (5pts)</h3>
+	<p>
+		You have created the environment in which your web pages will live. 
+		The next step is to put some content into your web presence.
+		To make the next several steps easier, we'll first move to the directory we just created with the command:
+		<br><br>
+		<tab5><code>cd public_html</code></tab5>
+		<br><br>
+		The cd command effectively changes our current notion of what "here" means. 
+		In this case, you've changed it to the new directory we created to hold your web content.
+		We've made available a file for you to use as a starting point for your web content.
+		To copy it to your public_html directory, issue the command:
+		<br><br>
+		<tab5><code>cp ~bls96/classes/cs164/template.html index.html</code></tab5>
+		<br><br>
+		The result of this command is that you have copied a file called template.html 
+		from the instructor's account into your public_html directory with the name index.html.
+		By convention, index.html is the name of the file that web servers provide 
+		when a URL is requsted that contains no file name.
+		<br><br>
+		Now that you've put some content on your web site, let's take a look at it.  
+		Open a web browser on your computer and go to the URL:
+		<br><br>
+		<tab5>http://www.cs.drexel.edu/~<i>userid</i>/</tab5>
+		<br><br>
+		where you'll replace userid with your username on tux.
+		The resulting page should look something like this:
+	</p>
+	<center>
+		<img src="labs/template.jpg">
+	</center>
+	<p>
+		Depending on whether you got all the details correct and some configuration defaults, 
+		it's possible you might get an error here instead of the desired page.  
+		Errors such as "File not found," "Forbidden," or "Permission Denied" indicate that something is not quite right.
+		This is a good example of how finding and fixing problem generally involves thinking at a lower level of abstraction.
+		To find and fix any problems you need to make sure you have a clear sense of
+		how the files are organized on tux and of how permissions are assigned. 
+		Once you figure out what's wrong, 
+		commands like chmod and mv will be useful for correcting things.  
+		The key things that need to be true here are:
+	</p>
+	<ol>
+		<li>Your index.html file must be in your public_html directory</li>
+		<li>Your public_html directory must be world readable and executable (e.g. permissions of rwxrwxr-x)</li>
+		<li>Your index.html file must be world readable (e.g. permissions of rw-rw-r--)</li>
+	</ol>
+	<p>
+		As an answer, describe any problems you had getting the correct page to appear.
+		If there were no problems, simply state "No problems".
+	</p>
+
+	<br>
+	<h3>Question 8 (10pts)</h3>
+	<p>
+		Obviously, this isn't the actual web page we want to serve. 
+		So it's time to edit it to make the information on it relevant to us.
+		Go back to your terminal window where you're logged into tux and issue the command:
+		<br><br>
+		<tab5><code>nano index.html</code></tab5>
+		<br><br>
+		You'll be presented with a screen that looks something like:
+	</p>
+	<center>
+		<img src="labs/pico.jpg">
+	</center>
+	<p>
+		This is a text editor called nano.
+		Like most text editing environments you've probably experienced, 
+		you can move around in the text with the arrow keys 
+		(though arrow keys are one of the things that has been problematic with the Windows port of OpenSSH in the past).
+		The cursor can also be moved with the control characters: 
+		^P for the previous line, 
+		^N for the next line, 
+		^F to move forward one character and 
+		^B to move back one character.  
+		Plain text that you type is inserted at the point in the text where the cursor is.
+		<br><br>
+		For those who are familiar with (or want to learn) other editors like emacs and vi, 
+		they are also available on tux.  
+		In fact, you will be strongly encouraged to learn and to use such 
+		editors when you use tux in later courses, such as CS265.
+		If you want to learn about emacs or vim, talk to your TA.
+		<br><br>
+		What may be different from your previous experience is that 
+		there are no drop-down menus for other operations.
+		As indicated by the bottom two lines of the screen, 
+		there are a number of operations that can be triggered by control characters.  
+		These characters are typed by holding down the control key (often labeled Ctrl) 
+		and while holding it, typing the corresponding letter.  
+		For example, as indicated by the left-most prompt on the next to last line of the screen,
+		typing control-G will result in a help screen being printed.
+		<br><br>
+		Another aspect of this editor that sometimes throws students off is that it is not mouse-based.  
+		You can't position the cursor or select text with the mouse.  
+		You'll want to use the various control characters or arrow keys to move the the cursor.
+		Similarly, don't assume that the scroll bar in your terminal window has any effect on the editor.
+		If you've scrolled things so that the help information is missing from the bottom two lines,
+		then what you see isn't what the editor is seeing.
+		<br><br>
+		The thing to keep in mind with both of these points is that the editor is running on tux, 
+		not on your computer.
+		What's running on your computer is a terminal emulator.
+		Things you tell the terminal emulator to do aren't seen by the editor on tux.
+		So when you want to save the file or scroll, you need to tell the editor to do so, 
+		and that's done with the control character commands listed at 
+		the bottom of the screen and documented in the help screens.
+		<br><br>
+		Spend some time getting comfortable with nano.
+		Make sure all members of your group are able to start nano, make changes, and save those changes.
+		For an answer, describe how you would go about searching for a string of text that you might want to change.
+	</p>
+
+	<br>
+	<h3>Question 9 (5pts)</h3>
+	<p>
+		<b>Step 1:</b> Now you will need to modify this file, 
+		according to the lines that contain the "DELETE" phrases. 
+		The first two are simple - delete the lines and replace them with your name and today's date. 
+		These lines are comments, meaning they are encoded in the file, 
+		but do not appear on the web page when viewed by a browser.
+		<br><br>
+		The second should say "DELETE AND ENTER LAB#". 
+		Replace this text with "Lab 1". 
+		The next two statements require you to enter your name (again) and Section #. 
+		Do this.
+		<br><br>
+		<b>Step 2:</b> The last place requires you to enter the URL (Uniform Resource Locator)
+		for the CS 164 instructor web site.
+		Enter this text between the quote symbols:
+		<br><br>
+		<tab5><code>http://www.cs.drexel.edu/~bls96/</code></tab5>
+		<br><br>
+		<b>Step 3:</b> Save the file, and test it with your browser. 
+		Answer these questions:
+		<ol>
+			<li>Does the text "Lab 1" appear in the title bar of the browser window?</li>
+			<li>Does the document part contain your name in large bold print, 
+				your section number on the next line, 
+				and a link to the CS 164 web site on the third?</li>
+			<li>When you click on the underlined text, 
+			does your browser open up the CS 164 instructor page?</li>
+		</ol>
+		If you answered "no" to any of these questions, 
+		you need to make corrections in your file. 
+		Do this until the answer to each question is "yes".
+	</p>
+
+	<br>
+	<h3>Question 10 (10pts)</h3>
+	<p>
+		The last step is to copy the new HTML file you've created to your computer.
+		Start that process by logging out of tux.
+		You should log out of it each time you're finished using it.
+		Either the exit or logout command can be used for this. 
+		When you issue that command, you'll be returned to the local command prompt on your computer.
+		At your local computer's prompt (not the tux prompt), 
+		use the scp command from the ssh package to copy the file from tux to your computer.
+		<br><br>
+		<tab5><code>scp </code><i>userid</i><code>@tux.cs.drexel.edu:public_html/index.html .</code></tab5>
+		<br><br>
+		If you are running Windows and have not been able to install and run OpenSSH, 
+		then use the file transfer capability of the software that you did install.
+		<br><br>
+		As before, use your userid rather than the literal string userid.
+		You'll have to enter your password again to complete the copy.
+		The scp program uses the same authentication mechanisms and 
+		encryption protocols as ssh does for copying files between two computers.
+		<br><br>
+		Not only does this give you a local copy of the file, 
+		it is the first step if you wish you use a different mode of operation.
+		In particular, instead of logging into tux to to edit your files,
+		it's possible to edit your files on your local computer and then copy them to tux.
+		The benefit to doing so is that you can use whatever editor
+		you're comfortable with on your local computer.
+		The downside is that you'll have to be conscious of which version of which file
+		is on which computer and you'll have to be careful about actions
+		that can cause protection modes to be changed.
+		Now that you're familiar with how to connect to a remote machine
+		and manipulate the files there, 
+		you are welcome to work in whichever mode you feel more comfortable.
+		<br><br>
+		If you would like more information on scp and ssh, there is a link on BBLearn under "Course Information"
+		<br><br>
+		For your answer, give the full path for the location of the file on your local system.
+	</p>
+
+	<br>
+	<h3>Question 11 (5pts)</h3>
+	<p>
+		Before we move on to complete this lab, 
+		you may be wondering why we're using command-line tools.
+		After all, they're soooo 20th century.
+		The reality is that experienced professionals should be comfortable with 
+		a wide variety of tools and choose the tools appropriate to each situation.
+		There's an old saying that when the only tool in your toolbox is a hammer,
+		all the world looks like a nail.
+		<br><br>
+		Now that you've gotten some familiarity with using command-line tools,
+		you are free to explore options that have a point-and-click flavor to them.
+		We start with some tools that are available to you at
+		<a href="http://software.drexel.edu">http://software.drexel.edu</a>.
+		For Mac users,
+		there's a package called Fetch that you can download and install to connect and transfer files via ssh.
+		Those using Windows, can download and install a package called SSHSecureS.
+		Outside of the packages available on Drexel's software distribution, 
+		there's a package called 
+		<a href="https://cyberduck.io/">Cyberduck</a> 
+		that is ported to a wide variety of platforms, including Linux, Mac, and Windows.
+		One of the most commonly used packages on Windows is called 
+		<a href="https://www.putty.org/">PuTTY</a>.
+		Finally, if you want to use your phone or tablet, there are SSH implementations for both Android and iOS.
+		<br><br>
+		The bottom line is that I want you to come away from this lab being equally
+		knowledgable and equally comfortable with both a command-line way 
+		of doing things and a GUI way of doing things.
+		Only then will you be in a position to make a reasoned judgement as to 
+		which approach will be most effective in any given situation.
+		Doing things in a particular way because it's the only way you know how 
+		to do it isn't making a thoughtful and reasoned decision.
+		Instead, it's more a willful refusal to learn something new.
+		<br><br>
+		Does all the world look like a nail to you?
+		Why or why not? 
+		Record your answer.
+	</p>
+
+	<br>
+	<h3>Question 12 (5pts)</h3>
+	<p>
+		Include a link to your website here so the TAs can properly grade it.
+	</p>
+
+	<br>
+	<h3>Question 13 - Slack (5pts)</h3>
+	<p>
+		In an attempt to make it easier for y'all to keep in contact with your TAs and classmates to ask questions, we created a Slack channel.
+		TAs are identifiable with the (TA) abbreviation. Join using the link below.
+		<br><br>
+		<a href="https://join.slack.com/t/cs164fa1920/signup">Slack Channel Join Link</a>
+		<br><br>
+		Once in the channel, set your name to whatever your name is on Blackboard.
+		If you have a preferred name set, that is what it is on Blackboard.
+		If you need help setting a preferred name, talk to your TA.
+		If you wanna make it super easy for us to identify you, upload a profile picture of yourself.
+		<br>
+		<br>
+		To recieve credit for this question, send a message to your lab TAs and write down who you sent a message to.
+		The message can be anything!
+		Say hello!
+		Ask a question!
+		Send us a meme!
+		Start a conversation!
+		Grading tends to get boring so have fun with it.
+		Be creative!
+	</p>
+	<br>
+	<h3>Question 14 - Feedback (5pts)</h3>
+	<p>
+		Were there any factual errors in this lab document? 
+		Please identify them.
+		Were any portions of this lab confusing for you? 
+		Can you suggest how to make it less confusing?
+	</p>
+	<hr>
+	<h2>Submission Conventions</h2>
+	<p>
+		<b>Submit on BBLearn</b>
+		<br>
+		questions1.txt : A plain text file with your answers to the questions
+		<br>
+		<br>
+		<b>Webpage on tux</b>
+		<br>
+		index.html : Your resulting webpage you link to in Question 12
+	</p>
+
+ </body>
+</html>

@@ -1,0 +1,547 @@
+<h1>Tranquility Tutorial</h1>
+<lesson>
+	<part>
+		<h1>A Blissful Beginning</h1>
+		<p>
+			Let's begin here, this class is <i>not</i> a programming class.
+			The purpose of this class is not to teach you to be a master programmer.
+			We are merely using programming as a way to teach problem solving and
+			logic. 
+			That is what the essence of what programming is: problem solving and logic.
+		</p>
+		<p>	
+			Tranquility is a language we created for this class where syntax, built-in
+			functions, and IDEs are <i>not</i> the focus.
+			Our focus is the process behind sequentially solving a problem.
+			This is a language that is meant to be taught, not used in industry.
+		</p>
+		<p>
+			That being said, we try and keep Tranquility fairly internal.
+			No Googling, no StackOverflow.
+			Instead, we provide with you this ancient tomb, the 
+			<a href="http://cs.drexel.edu/~bls96/tranquility.pdf">Tranquility Programmers Manual.</a>
+			This artifact contains important information that can answer most, if not all
+			of your Tranquility questions.
+			Any other questions you have can be answered by your wise TAs and Professor.
+		</p>
+		<hr>
+		<omc-question>
+			We have provided you this manual, now we expect you to read it.
+			What is the first example in the manual?
+			
+			<choice>sq - square a number<wrong>
+			<h1>Nope</h1>
+			
+			<choice>Hello World - print hello world <right>
+			<h1>Good</h1>
+			
+			<choice>init - initialize Tranquility<wrong>
+			<h1>Not Quite</h1>
+			<p> The init function is used in the example</p>
+		</omc-question>
+	</part>
+	<part>
+		<h1>Swear Not Upon the Variable Moon</h1>
+		<p>
+			When working with the CARDIAC, we found it useful to allocate
+			places in memory where we would store data while we were
+			working on it.
+			We often refer to these as <i>variables.</i>
+			It's important to note that the way we use variables in computing
+			is a little different than the way they are used in Math.
+			Often in Math we'll make a statement like <i>y</i>=2<i>x</i>
+			and then use <i>y</i> as being equal to twice <i>x</i> for
+			the rest of the proof or calculation we're working on.
+			But that's not the way they work in programming.
+			The best way to think of variables in programming is as a box
+			where you can put something or take something out, but where
+			that something doesn't automatically change while it's in there.
+			<hr>
+			<sa-question>
+				On the CARDIAC in assembly language, we used a directive
+				called DATA to give a name to a memory location.
+				This is how we created a variable there.
+				Look at the code for the CARDIAC simulator.
+				What keyword is used in Tranquility to create a variable?
+			
+				<choice>var<right>
+				<h1>Good</h1><p>The <code>var</code> does allocate
+				memory space for a variable.
+			</sa-question>
+	</part>
+	<part>
+		<h1>To Assign is to Store</h1>
+		<p>
+			In Tranquility, unlike most mainstream languages, the colon
+			(<code>:</code>) is used for <i>assignment.</i>
+			Most mainstream languages however use the equals sign
+			(<code>=</code>) for assignment.
+			It is often said that this is like an equality in mathematic,
+			but there are important differences that you need to
+			internalize.
+			In math, if we make a statement such as <i>y</i>=2<i>x</i>+5,
+			then we are typically establishing a relationship between <i>x</i>
+			and <i>y</i> that remains true thoughout the problem we're
+			solving or proof we're developing.
+			In other words, no matter what <i>x</i> is, <i>y</i> will <b>always</b>
+			be 2<i>x</i>+5.
+		</p>
+		<p>
+			Establishing a relationship is not the right way to think about
+			assignment in programming.
+			The reason is that programming is not about establishing static
+			relationships; it's about specifying a sequence of actions through
+			time.
+			So if the current value of <i>x</i> is 3, then when we execute
+			the statement <i>y</i>=2<i>x</i>+5, then <i>y</i> will get
+			the value 11.
+			That much is what we'd expect from math, but if later <i>x</i>
+			changes, then <i>y</i> doesn't change correspondingly.
+			Similarly, we can't assert that <i>y</i> is a particular value
+			and expect that the computer will solve for <i>x</i>.
+			The way we want to think about this is that the assignment
+			sets <i>y</i> to 11 at a particular point in time, but that later
+			<i>x</i> and <i>y</i> can change independently of each other.
+		</p>
+		<hr>
+		<omc-question>
+			Although you haven't seen the details of what the operations
+			on the right-hand side of the assignments do, study the
+			assignments in the CARDIAC simulator.
+			Based on these statements and what you know about the
+			CARDIAC, what instruction would be used in the CARDIAC
+			to carry out an assignment?
+			
+			<choice>ADD<wrong><h1>Nope</h1>
+			<p>Although a statement like <code>x + y</code> would
+			involve the ADD instruction, that's not how the actual assignment
+			is carried out.</p>
+	
+			<choice>TAC<wrong><h1>Try Again</h1>
+			<p>Remember that the TAC instruction conditionally transfers
+			control; it doesn't change any memory locations</p>
+
+			<choice>JMP<wrong><h1>Keep Trying</h1>
+			<p>The JMP instruction in CARDIAC transfers control to another
+			location and saves the program counter for later use.</p>
+
+			<choice>STO<right><h1>That's Right</h1>
+			<p>The STO instruction changes a memory location by storing
+			the accumulator there.  If the memory location contains a variable,
+			this is the same as assigning to the variable.
+		</omc-question>
+	</part>
+	<part>
+		<h1>You're Going to Forget the Dot</h1>
+		<p>
+			The next part goes over operators in much more depth.
+			However, I will be using them to explain a concept here.
+			I apologize in advance.
+		</p>
+		<p>
+			Tranquility has a feature that not many languages have, it's called
+			"the dot". Technically, the proper name would be a pointer dereference, however,
+			ask any TA or student, and we call it "the dot". A pointer is the address of
+			a variable. The contents of a variable are separate from the address of a 
+			variable.
+		</p>
+<pre>
+	var w, x, y, z
+	w : 7
+	x : 4
+	y : 1
+	z : 69
+</pre>
+		<center>
+			<img src="mem.png">	
+		</center>
+		<p>
+			So what does memory location and value mean? Let's think about memory and 
+			visualize it. In the above code, there are 4 variables, <i>w, x, y, z</i>.
+			Each variable refers to a location in memory. This location is referenced using
+			a number. In the above, <i>w</i> refers to memory location 65535. The value that
+			memory location 65535 contains is 7. In order to differentiate between <i>w</i> and
+			the contents of <i>w</i> (7), we use the dot. This means, the contents of <i>w</i>
+			is denoted by <code>.w</code>
+		</p>
+		<p>
+			Now, how do we apply this information? How do we know when to use a dot? 
+			First, let's translate colon (<code>:</code>) to be "set the contents of".
+			So to set the contents of <i>x</i>, (<code>.x</code>) we'd use 
+			`<code>x : something</code>`. So in this case, we do not use the dot.
+			In order to use the contents of x, like in an equation or something, 
+			you would do `<code>.x == .y</code>`
+		</p>
+	
+
+		<hr>
+		<omc-question>
+			Which of the following uses proper dot notation to put the value 7 in 
+			<code>x</code> given the following:
+<pre>
+	var x, y, z
+	x : 0
+	y : 5
+	z : 2
+</pre>
+
+			<choice>.x : .y + .z<wrong>
+			<h1>Very close</h1> 
+			<p><code>.x : .y + .z</code> would add the contents of y and the 
+			contents of z and put them in the contents of the contents of x</p>
+
+			<choice>x : .y + .z<right>
+			<h1>Correct</h1>
+			<p><code>x : .y + .z</code> correctly takes the contents of y and adds them
+			to the contents of z then makes that the contents of x.</p>
+
+			<choice>x : y + z<wrong>
+			<h1>You forgot the dots</h1>
+			<p><code>x : y + z</code> take the addresses of y and z and adds those and makes
+			it the contents of x. So instead of adding the contents of y and z, you just added 
+			y and z.</p>
+
+			<choice> .x : y + z<wrong>
+			<h1>You swapped the dots</h1>
+			<p>Remember, the dot refers to the contents of a variable.</p>
+
+		</omc-question>
+	</part>
+
+	<part>
+		<h1>Smooth Operators</h1>
+		<p>
+			Now let's turn our attention to the expressions that are on the
+			right-hand side of assignments.
+			In this tutorial, we will focus mostly on the basic arithmetic
+			operations.
+			Two of the most basic are addition and subtraction, which, as
+			you can probably guess, are notated with the `+' and `-' characters.
+			So the expression <code>a+b</code> in Tranquility will <i>evaluate</i>
+			to be the sum of the two variables <i>a</i> and <i>b</i>.
+			Evaluating an expression means that we calculate the value of
+			that expression at that point in time.
+		</p>
+		<p>
+			Expressions can be used anywhere a value such as a constant
+			or a variable can be used.
+			For our purposes here, we'll focus on their use on the right-hand
+			side of assignments.
+			Consider the statement:
+			<pre>
+c : .a - .b
+			</pre>
+			Although we might think of this as a single step in our program,
+			it's actually several steps inside the machine:
+			<ol>
+				<li> Fetch the contents of the variable <i>a</i>.
+				<li> Handle <i>b</i>
+				<ol type="a">
+					<li> Fetch the contents of <i>b</i>.
+					<li> Subtract the contents of <i>b</i> from that of <i>a</i>.
+				</ol>
+				<li> Store the result in <i>c</i>.
+			</ol>
+		<p>
+			We've divided the steps as shown to highlight certain aspects
+			of the sequence.
+			To start with, depending on the machine design, Step&nbsp;2
+			might be handled as a single step, or as two separate steps,
+			2a and 2b.
+			The second thing to highlight is that Steps&nbsp;1 and&nbsp;2
+			together comprise the evaluation of the expression <code>.a-.b</code>.
+			This is done prior to the assignment getting carried out.
+			It is important to remember that's the sequence of the timing of any
+			assignment statement.
+			First, the expression on the righ-hand side is evaluated, and then
+			the result is stored in the left-hand side.
+			The details of the sequence lead us directly into understanding
+			how such a statement is executed on the computer.
+			Using CARDIAC as an example, the statement:
+			<pre>
+c : .a - .b
+			</pre>
+			might be compiled to the instruction sequence:
+			<pre>
+     CLA   a
+     SUB   b
+     STO   c
+			</pre>
+		<p>
+			Before moving on, we should mention some of the other operators
+			that can be used in expressions.
+			The asterisk (*) character is used for multiplication, slash (/) is used
+			for division, and percent (%) is used for the remainder after division
+			(or modulus).
+	
+		<omc-question>
+			Which of the following Tranquility statements would correspond to the following
+			CARDIAC assembly language code:
+			<pre>
+     CLA   y
+     ADD   y
+     STO   x
+			</pre>
+
+			<choice><code>x : y + y</code><wrong>
+			<h1>I knew you were gonna forget the dots</h1>
+			<p>Told ya so</p>
+
+			<choice><code>y : .x + .x</code><wrong><h1>Nope</h1>
+			<p>You need to look more carefully at which values are being
+			read and which are being written.
+
+			<choice><code>x : 2 * y</code><wrong><h1>Close</h1>
+			<p>Although mathematically equal, we didn't tell the computer to
+			use the multiplication operation. Also, you forgot the dot.
+
+			<choice><code>x : .y + .y</code><right><h1>Good</h1>
+			Yes, that sequence of CARDIAC code does correspond to the Tranquility
+			statement <code>x : .y + .y</code>
+		</omc-question>
+	</part>
+	<part>
+		<h1>Decisions, Decisions</h1>
+		<p>
+			While working with the CARDIAC, we saw the <code>TAC</code>
+			instruction that could be used to make logical decisions by conditionally
+			jumping to another memory location based on the value of the
+			accumulator.
+			Higher-level languages like Tranquility also provide mechanisms
+			for conditionally transferring control.
+			The primary statement we'll be studying is the <b>if</b> statement.
+			Let's look at the below example.
+<pre>
+    if .mode == 0 {
+        x : .x + 1
+    }
+    else {
+        x : .x - 1
+    }
+    x : .x * 2
+</pre>
+			Conceptually, this code just looks at the variable <i>mode</i>
+			and in the case that it's 0, the code performs addition.
+			However, if <i>mode</i> is not 0, then it performs subtraction.
+			In either case, the multiplication is performed.
+		<p>
+			Notice that the operator that is used to compare <i>mode</i>
+			to 0 is the <code>==</code> operator.
+			The single instance of the equal sign (=) does not do anything in
+			Tranquility.
+			However, the double equal sign (==) signifies comparison.
+			Remember this.
+			It will be the same for many of the languages you will learn.
+		</p>
+		<p>
+			To understand how this works, we'll break it down into steps
+			like those performed by the computer when executing this
+			code:
+		</p>
+		<ol>
+			<li> Evaluate the condition asking whether <i>mode</i> equals 0.
+			<li> If the test is true, then jump to Step&nbsp;5.
+			<li> Perform addition
+			<li> Jump to Step&nbsp;6.
+			<li> Perform subtraction
+			<li> Perform muliplication
+		</ol>
+		<p>
+			We won't go through the details of how this would be
+			implemented on the actual CARDIAC.
+			(Hint: If mode is non-negative and 0-mode is also non-negative,
+			then we know it's equal to 0.)
+			Instead, we're going to pretend that there's another instruction
+			in the CARDIAC that we'll call <code>TAZ</code>.
+			This instruction is much like <code>TAC</code> except that
+			the jump occurs if the accumulator is 0.
+			We're also going to take advantage of an aspect of the <code>JMP</code>
+			instruction that we haven't used before.
+			In particular, the <code>JMP</code> instruction not only changes
+			the PC to point to a new instruction, but it also saves the old PC
+			so that we can pick up where we left off.
+			With that in mind, we can implement the steps of the <code>if</code>
+			statement as follows:
+		</p>
+<pre>
+if      CLA     mode
+        TAZ     istrue
+        JMP     dostep
+        JMP     endif
+istrue  JMP     clearinterval
+endif
+</pre>
+		<hr>
+		At the end of the following code, what is the final value
+		of the variable <code>x</code>?
+<pre>
+var x,y
+x : 5
+y : 7
+if .x &gt; .y {
+   if .y == 8 {
+      x : .y
+   }
+   else {
+      x : .x + 1
+   }
+}
+else {
+   if .y &lt; 10 {
+      x : .x - 1
+   }
+   else {
+      x : .y + 2
+   }
+}
+</pre>
+		<omc-question>
+			<choice>7<wrong><h1>Wrong</h1>
+			Because <code>x</code> is less than <code>y</code>
+			and <code>y</code> is not 8, we don't set <code>x</code>
+			to be equal to <code>y</code>.
+
+			<choice>6<wrong><h1>Nope</h1>
+			Because <code>x</code> is less than <code>y</code>
+			we don't increment <code>x</code>.
+			
+			<choice>4<right><h1>Good</h1>
+			Yes, because <code>x</code> is less than <code>y</code>
+			and <code>y</code> is not 8, we decrement <code>x</code>.
+			
+			<choice>9<wrong><h1>Sorry</h1>
+			Because <code>y</code> is less than 10
+			we don't set <code>x</code> to <code>y + 2</code>.
+		</omc-question>
+	</part>
+	<part>
+		<h1>Oh No, Not Again</h1>
+		<p>
+			When working with the CARDIAC, conditional branching wasn't
+			the only use we made of jumping.
+			The other big reason for jumping to another place in the code is
+			to repeat some part of the code.
+			A block of code that is repeated under certain circumstances
+			is called a <i>loop</i>.
+			In many languages, there are several different types of loop structures.
+			However, in tranquility, there is only one loop, the <code>loop</code>.
+		</p>
+		<p>
+			A loop is quite simple to use. It will continue repeating the same block 
+			of code <code>until</code> a certain condition is met. The <code>until</code>
+			statement defines a condition, that when true, will end the loop. Let's look
+			at the example below. Read through it and see if you can see what's happening.
+		</p>
+<pre>
+var i
+i : 1
+loop {
+    until .i > 100
+    iprint(.i)
+    nl()
+    i : .i + 1
+}
+</pre>
+		<p>
+			The above loop runs 100 times. We know this because we start with <i>i</i> being
+			1. The loop runs until <i>i</i> is greater than 100. Since we increment <i>i</i>
+			in steps of 1, we run 100 times. Now, everytime we run the block, we use an integer
+			print statement (<code>iprint</code>) to print out the contents of <i>i</i>
+		</p>
+		<hr>
+		What is the final value of the variable <i>x</i> after
+		this code is run?
+<pre>
+var x, i, j
+x : 0
+i : 0
+loop {
+    until .i &gt; 3
+    j : 0
+    loop { 
+        until .j &gt; 2
+        x : .x + .i * .j
+        j : .j + 1
+    }
+    i : .i + 1
+}
+</pre>
+		<omc-question>
+			<choice>0<wrong><h1>Nope</h1>
+			<p>Although there are some 0s that are added to x,
+			there are other non-zero values that also get added.
+
+			<choice>5<wrong><h1>Close</h1>
+			<p>It's true that 5 was the last value added, but
+			<i>x</i> wasn't 0 before the add.
+
+			<choice>15<right><h1>Very Good</h1>
+
+			<choice>27<wrong><h1>Sorry</h1>
+			<p>Note that the two loops are not run for the
+			cases where <code>code>i==4</code> or
+			<code>j==3</code>.
+		</omc-question>
+	</part>
+	<part>
+		<h1>Function, Function, What's Your Function?</h1>
+		<p>
+			Throughout this tutorial we have been looking at code
+			that can be contained in functions.
+			Functions are used to organize our code.
+			They give us ways to name sections of code and to
+			provide blocks of code that can be used repeatedly
+			without repeating the text of the code.
+			There's even more that functions can do for us, but
+			for for our purposes in this tutorial, those are the
+			main benefits.
+		</p>
+		<p>
+			The general format for functions looks like:
+		</p>
+		<b>fun</b> <i>name</i>(<i>parameters</i>)<br>
+		{<br>
+		&nbsp;    // Function body<br>
+		}<br>
+		<p>
+			As with variables, the name can be anything you want it
+			to be, but it should start with a letter.
+			The parameters are a list of names that allow input data
+			to be passed into the function.
+		</p>
+		<p>
+			Function can also produce outputs.
+			The output of a function is specified in the
+			<code>return</code> statement.
+		</p>
+		<hr>
+		What is the value of <i>x</i> after the statements:
+<pre>
+var x
+x : 5
+x : foo(.x)
+</pre>
+		where the function <i>foo</i>() is defined as
+		follows:
+<pre>
+fun foo(n) {
+    var x, j
+
+    j : 0
+    x : 0
+    loop {
+        until .x &gt;= .n
+        j : .j + .x
+        x : .x + 1
+    }
+    return .j
+}
+</pre>
+		<omc-question>
+			<choice>5<wrong><h1>Nope</h1>
+			<choice>15<wrong><h1>Nice Try</h1>
+			<choice>4<wrong><h1>Sorry</h1>
+			<choice>10<right><h1>Good</h1>
+		</omc-question>
+	</part>
+</lesson>

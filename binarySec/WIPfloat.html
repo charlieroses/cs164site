@@ -1,0 +1,149 @@
+<html>
+    <head>
+   		<title>Floating Point</title>
+        <base href="https://www.cs.drexel.edu/~src322/cs164/">
+        <script src="sidebar.js"></script>
+   		<script src="numSec/numJava.js"></script>
+   		<link rel="stylesheet" type="text/css" href="numSec/numCss.css">
+    </head>
+    <body>
+    	<div class="sideBar" id="sideBar">
+    	</div>
+        <script>setupSidebar();</script>
+	    <div class="mainInfo">
+	    	<div class="prevnextcontent">
+	    		<div class="leftprev">
+	    			<a href="numSec/baseSixteen.html">Previous Section</a> : Base-16 : 1.3 </a>
+	    		</div>
+	    		<div class="rightnext">
+	    			Chapter 2 : Binary : <a href="binarySec/binIntro.html">Next Section</a>
+	    		</div>
+	    		<br>
+	    	</div>
+	    	<hr>
+   			<h1>2.5 : Floating Point</h1>
+			<hr>
+            <p>
+                This page is currently under construction.
+            </p>
+			<p>
+				Floating point numbers are a rather complex topic that we don't touch much
+				in this class. 
+				We want you to have a general understanding of the topic.
+			</p>
+
+			<hr>
+			<h2>Scientific Notation</h2>
+			<p>
+				Before we look at floating point, a topic we don't understand, let's look at
+				a similar topic we do understand.
+				Scientific notation is a notation most commonly used in Chemistry and Physics to
+				represent both very large and very small numbers.
+				Scientific notation has the following format.
+			</p>
+			<code>
+				<center size="+4">
+				<b>x * 10<sup>n</sup></b>
+				</center>
+				<br>
+				<tab5>x : A number ranged [1.0, 10.0)</tab5>
+				<br>
+				<tab5>n : The power to which 10 is raised to</tab5>
+				<br>
+				<br>
+				<tab5>Examples :</tab5>
+				<br>
+				<tab5>4500000000 : 4.5 * 10<sup>9</sup></tab5>
+				<br>
+				<tab5>0.0000000391 : 3.91 * 10<sup>-8</sup></tab5>
+			</code>
+			<p>
+				As you can see, there is a very specific format this follows. 
+				The <i>x</i> is never greater than 10. 
+				If <i>x</i> were to be greater than 10, it means that we can multiply
+				the answer by 10 again, and increase <i>n</i> accordingly.
+				This process is incredibly important to understand, as it is very closely
+				mimicked in floating point.
+			</p>
+			<hr>
+			<h2>The Process</h2>
+			<p>
+				
+			</p>
+
+			<hr>
+			<h2>The Representation</h2>
+			<p>
+				Now that we understand how a floating point number works, we can look at how
+				the computer will represent this number.
+				As we mentioned before, the computer stores everything in strings of 0s and 1s.
+				We've represented numbers fairly easily using a string of 0s and 1s, however,
+				floating point isn't just a straight number.
+				In floating point, we have a number, multiplied by another number that is raised
+				to a power.
+				Now, we could just take that answer and represent it using twos complement.
+				However, we can use floating point to represent both very large and very 
+				small numbers.
+				If we're using a 32 bit system, we wouldn't be able to represent all numbers
+				that floating point can represent.
+				If only there was a way to represent the full floating point number in binary...
+				Oh wait, there is!
+			</p>
+			<br>
+			<code>
+				<center>
+					seeeeeeeemmmmmmmmmmmmmmmmmmmmmmm
+				</center>
+			</code>
+			<br>
+			<p>
+				That clearly makes so much sense.
+				Nothing confusing about that.
+				Absolutely easy to understand.
+			</p>
+			<p>
+				What does that long string of random letters mean? 
+				First, let's recognize that each letter represents a bit, a 0 or 1.
+				This would make the above a 32 bit number.
+				This has one <i>s</i> bit, 8 <i>e</i> bits, and 23 <i>m</i> bits.
+				Now, what do those letters mean?
+			</p>
+			<code>
+				<center size="+4">
+					<b>m * 2<sup>e</sup></b>
+				</center>
+				<br>
+				<tab5>s : sign (positive or negative)</tab5>
+				<br>
+				<tab5>e : exponent</tab5>
+				<br>
+				<tab5>m : mantissa</tab5>
+			</code>
+			<br>
+			<p>
+				Just as before, the leftmost bit is the MSB (Most Significant Bit) and
+				represents the sign of the number. 
+				The exponent, in a 32 bit structure, is an 8 bit number.
+				Finally, the mantissa is the main number.
+				Let's look at the example in the slides.
+			</p>
+			<code>
+				<center>
+					+0.11 * 2<sup>1</sup>
+				</center>
+			</code>
+			<hr>
+			<h2>Applications</h2>
+
+   			<hr>
+	    	<div class="prevnextcontent">
+	    		<div class="leftprev">
+	    			<a href="numSec/baseSixteen.html">Previous Section</a> : Base-16 : 1.3 </a>
+	    		</div>
+	    		<div class="rightnext">
+	    			Chapter 2 : Binary : <a href="binarySec/binIntro.html">Next Section</a>
+	    		</div>
+	    	</div>
+    	</div>
+    </body>
+</html>
