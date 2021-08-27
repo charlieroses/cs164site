@@ -1,0 +1,113 @@
+<html>
+	<head>
+		<title>CARDIAC Webinar</title>
+		<link rel="stylesheet" type="text/css" href="webinar.css">
+	</head>
+	<body>
+		<center><h1>Drexel CCI : CARDIAC Arrest Workshop Notes</h1></center>
+		
+		<h2>Links</h2>
+		<ul>
+			<li><a href="https://www.cs.drexel.edu/~bls96/museum/cardsim.html">CARDIAC Simulator</a></li>
+			<li><a href="https://www.cs.drexel.edu/~bls96/museum/CARDIAC_manual.pdf">CARDIAC Manual</a></li>
+			<li><a href="https://www.cs.drexel.edu/~bls96/museum/cardiac.html">More Information on the CARDIAC</a></li>
+			<li><a href="https://www.cs.drexel.edu/~bls96/cardiacex.html">Example Code</a></li>
+			<li><a href="https://www.cs.drexel.edu/~bls96/cardiacans.html">Example Code Explanation</a></li>
+		</ul>
+	
+		<h2>Vocabulary</h2>
+		<p>
+			<b>Accumulator :</b> A register that can be operated on
+			<br>
+			<b>Assembler :</b> Translates assembly code into machine code that
+			the computer can understand
+			<br>
+			<b>Assembly Code :</b> A type of "psuedocode" that is used by humans
+			to better comprehend machine code
+			<br>
+			<b>ALU :</b> Arithmetic Logic Unit, performs calculations
+			<br>
+			<b>Decoder :</b> Decodes the instructions from the Instruction
+			Register into something the ALU can understand and operate with
+			<br>
+			<b>Disassembler :</b> Translates machine code into assembly language
+			<br>
+			<b>Instruction Register :</b> A register that hold the current 
+			instruction while the decoder interprets it
+			<br>
+			<b>Machine Code :</b> The code that computers understand and interpret
+			<br>
+			<b>Program Counter :</b> Keeps track of where in the program
+			we are at and what instruction is executed.
+			<br>
+			<b>Register :</b> A dedicated location for information to be
+			stored.
+		</p>
+		<h2>The Program</h2>
+		<p>
+			Next here is the CARDIAC program that we run in the simulator:
+		</p>
+<pre>
+ 04   000    N     DATA    0
+ 05   000    D     DATA    0
+ 06   000    Q     DATA    0
+
+ 10   100          CLA     00
+ 11   700          SUB     00
+ 12   606          STO     Q
+ 13   004          INP     N
+ 14   005          INP     D
+ 15   104    LOOP  CLA     N
+ 16   705          SUB     D
+ 17   323          TAC     DONE
+ 18   604          STO     N
+ 19   106          CLA     Q
+ 20   200          ADD     00
+ 21   606          STO     Q
+ 22   815          JMP     LOOP
+ 23   506    DONE  OUT     Q
+ 24   504          OUT     N
+ 25   900          HRS
+</pre>
+
+		<h2>Running the Program</h2>
+		<p>
+			Steps to run the program in the simulator:
+		</p>
+		<ol>
+			<li>For each line of the program:</li>
+			<ul>
+				<li>Enter the number in the second column into the memory box 
+				labeled by the number in the first column</li>
+			</ul>
+			<li>Enter two numbers into the Deck box on separate lines</li>
+			<li>Click the Load button to put the Deck into the Reader</li>
+			<li>Enter the number 10 in the PC box</li>
+			<li>Click the Slow button and watch the program run</li>
+		</ol>
+
+		<h2>Can You Guess What the Program Does?</h2>
+		<p>
+			Try these pairs of numbers to see what it does. What is the output
+			for each set of numbers? How does the output relate to the input?
+		</p>
+		<ul>
+			<li>12 3</li>
+			<li>3 2</li>
+			<li>3 5</li>
+			<li>11 4</li>
+		</ul>
+
+		<h2>Questions?</h2>
+		<p>
+			If you have any questions about this example or anything we covered
+			today, you can reach me at bls96@drexel.edu or the Head Teaching Assistant, Charlie at
+			src322@drexel.edu.
+		</p>
+
+		<h2>Photos</h2>
+		<img style="width:50%" src="cardbk.jpg">
+		<img src="cardiac2-s.jpg">
+
+	</body>
+</html>

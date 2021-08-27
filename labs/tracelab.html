@@ -1,0 +1,151 @@
+<html>
+<head>
+<title>Tracing Code</title>
+<base href="https://www.cs.drexel.edu/~src322/cs164/">
+<link rel="stylesheet" href="labs/labcss.css">
+</head>
+<body>
+<h1>Lab 7 - Tracing Code</h1>
+<p>
+For the first, and maybe only time, you don't have to submit a questions file.
+This week, the tables have turned, instead of me looking at your code, you will look at mine.
+You will edit my code and make comments on it.
+The code is on BBLearn under <code>l7.t</code>.
+This is a plain text document, I expect you to edit it with a plain text editor.
+Since you will be making changes to the code, I expect you to compile and run it, which means use tux and nano.
+</p>
+<p>
+Comment your name, abc123 user id, and lab section at the top of the file.
+</p>
+<hr>
+
+<h2>Part 1 - Tracing and Commenting (80 pts)</h2>
+<p>
+I have given you some code.
+If you run the code <a href="labs/l7.html">here</a> you will see it asks for an
+input, then nothing appears to happen after that. I will tell you that the
+input you give, is the velocity to throw a ball directly up into the air. What the
+code actually does is for you to figure out. Read through the code, and figure out
+what it's doing.
+</p>
+<p>
+As you read through this code, comment it.
+What is each function doing?
+What is each line doing?
+How does this line help us reach the end goal?
+What does function mean?
+What does each line mean?
+I have intentionally used single letter variable names.
+What is each variable used for?
+These are some questions I want you to keep in mind.
+</p>
+<p>
+When commenting your code, I want you to actually think and dig deep. Let's consider
+the following fragment of code. This code is a simple counting program that counts
+from 1 to 5.
+</p>
+<pre>
+var c
+c : 1
+loop {
+	until .c > 5
+	iprint(.c)
+	nl()
+	c : .c + 1
+}
+</pre>
+<p>
+Now one way to comment this would be the following.
+</p>
+<pre>
+var c # initializes variable c
+c : 1 # sets c to 1
+loop {
+	until .c > 5 # loops until the contents of c are greater than 5
+	iprint(.c) # prints the contents of c
+	nl() # prints a nl
+	c : .c + 1 # adds 1 to the contents of c and updates the value
+}
+</pre>
+<p>
+Let me tell you why I hate the above. While it does accurately explain what the
+code is doing, it has no relation to what the code means. Here's a better example.
+</p>
+<pre>
+var c # initializes variable c. c represents the current count
+c : 1 # sets c to 1, the count starts at 1
+
+# loops until we reach the end of our count, which is when the contents of c are
+# greater than 5
+loop {
+	until .c > 5
+	iprint(.c) # prints the current count
+	nl() # prints a nl for clarity
+	c : .c + 1 # increases the count by adding 1
+}
+</pre>
+<p>
+Now as you can see, the comments are a LOT more descriptive, and a lot more helpful.
+You don't need to comment every single line of code, but definitely consider the
+questions in the paragraph above, and comment what you think is necessary.
+</p>
+<p>
+I will
+be grading you based on how helpful and accurate your comments are. That being said,
+there is no "correct answer". I don't have a rubric of comments I expect you to have.
+If you have the exact same character for character comments as someone else, you'll
+both get 0s for plagiarism. You won't need to work with a partner for this lab because
+this lab is about reading and comprehending code, which is done individually.
+Commenting code is aimed at helping YOU understand what's going on.
+</p>
+
+<h2>Part 2 - Editing (20 pts)</h2>
+<p>
+Now that you understand what the code is doing and have sufficiently commented what
+happens at each step, its time to edit the code I wrote. When you run the code, it
+produces no output, I want you to produce an output. For this step, somewhere in the
+code, you will add statements to print out a table of time and height values. DO NOT
+change any calculations or move any code. You are ONLY to add printing statements. Given
+input 20, I expect an output of the following numbers, in a similar, equally as
+readable format. I am grading you based on the accuracy and readability of the information
+displayed. I intentionally used single letter headers to not give away info
+as to what the code does.
+</p>
+<pre>
+T : Y
+0 : 0
+1 : 15
+2 : 20
+3 : 15
+4 : 0
+</pre>
+<p>
+You may want to ask me any of the following questions: "Do we have to use colons?",
+"Do we have to label our table with T and Y?", "Can we change the spacing?".
+To which I answer, it doesn't matter. I care about the information that is conveyed
+and that the information is readable and comprehensible. If you ask me any questions
+regarding if the format of your table is okay, the I will tell you to "Read The Lab"
+because you clearly did not read this paragraph, and probably did not read many
+other paragraphs. A good test is if you can give your code to a friend who is not
+taking this class, have them run it. If an unrelated party can understand your table,
+then you did a good job.
+</p>
+
+<h2>Part 3 - Improving (Extra Credit 5 pts)</h2>
+<p>
+This part is extra credit, but if you see parts of my code that could cause errors,
+are not as optimized as they could be, or you think could be better. In a comment
+underneath your name and section header, suggest what you would do differently and what
+you would improve and why. DO NOT actually change my code with your suggestion.
+</p>
+<br>
+<hr>
+<h2>Submission Conventions</h2>
+<p>
+<b>Submit on BBLearn</b>
+<br>
+l7.t : The code template we gave you with the added code and comments
+</p>
+<br>
+</body>
+</html>

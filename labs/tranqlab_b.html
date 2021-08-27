@@ -1,0 +1,164 @@
+<html>
+<head>
+<title>Introduction to Tranquility</title>
+<script src="sidebar.js"></script>
+<base href="https://www.cs.drexel.edu/~src322/cs164/">
+<link rel="stylesheet" href="labs/labcss.css">
+</head>
+<body>
+<h1>Lab 6 - Introduction to Tranquility - NO EXPERIENCE</h1>
+<p>
+As usual, answer all questions in a <i>plain text file</i>
+named <code>questions6.txt</code>.
+At the top of your plain text file, include your name, student ID, and lab section.
+Failure to do so will result in a 0.
+</p>
+<p>
+This lab is meant for people with little to no programming experience.
+If you are an advanced programmer, we suggest doing the other lab
+instead. 
+</p>
+<p>
+We're going to walk through the CARDIAC lab you did last week, 
+this time in Tranquility. We will take in many positive numbers until we get
+a negative number. Then print out the running sum and count and average of
+the positive numbers.
+More we'll walk through planning a program and compiling and testing.
+</p>
+
+
+<hr>
+<h3>Question 1 - Tutorial (5 pts)</h3>
+<p>
+First, do this quick
+<a href="http://cs.drexel.edu/~src322/cs164/labs/tranqtut/tranq.html">tutorial</a>
+on Tranquility and programming to prepare yourself for the lab. If
+you're confused about any questions, ask a TA.
+</p>
+<br>
+<h3>Question 2(15 pts)</h3>
+<p>
+Let's think about what we did to start last week. We answered these questions
+while keeping the CARDIAC in mind
+</p>
+<ul>
+<li> Pick a name for a memory location where the data will be read </li>
+<li> Which instruction is used to read an input card into memory? </li>
+<li> How will you get the number you just read into the accumulator to test it?</li>
+<li> What action will you take if the number is positive and what action if it's negative? </li>
+</ul>
+<p>
+Now these questions are a great starting point for calculating the average of
+a group of numbers. However, Tranquility doesn't have a input deck or
+accumulator. So these questions aren't very helpful anymore.
+<br><br>
+First, rephrase these questions in a more helpful way. Rewrite them to fit
+Tranquility better. There's no correct answer here, whatever questions get
+you in the Tranquility mindset and cover the same material.
+</p>
+<br>
+
+<h3>Question 3 (10 pts)</h3>
+<p>
+Answer the questions you rewrote for the previous questions. Still, only think
+in terms of English (or whatever language helps you think better but please
+write your answer in English so I can grade these). Do not write Tranquility
+code yet.
+</p>
+<br>
+
+<h3>Question 4 (15 pts)</h3>
+<p>
+Now, think about sequentially the actions we will take when doing this program.
+Write a few sentences about how you want your program to flow and run. Think 
+about using the words *loop/repeat* and *if* and *else/otherwise*.
+</p>
+<br>
+<h3>Question 5 (5 pts)</h3>
+<p>
+We've thought long and hard about writing the program, and have planned it out
+very well. Let's actually write code, but where do we even start?
+<br><br>
+Look at the examples in the Tranquility manual. The first example is Hello
+World. What line of code does this example have in common with the example on
+Page 3 or the example on Page 7? What does this line of code mean?
+</p>
+<br>
+<h3>Question 6 (5 pts)</h3>
+<p>
+Let's write some code! We're going to use nano to create this file and we're
+going to name it <tt>lab6.t</tt>
+<br><br>
+Inside of the <tt>init</tt> function, translate your algorithm from Question 4
+into real Tranquility code. Pages 12 and 13 have lists of functions that will
+help you. What functions are used to get user input? Which one is more
+beneficial to us in this program and why?
+</p>
+<br>
+<h3>Question 7 (5 pts)</h3>
+<p>
+Now let's run and test our code we wrote. Don't be worried if it doesn't work
+right away. Also, don't be afraid to run code that might not work! Debugging
+and testing is a big part of programming.
+<br><br>
+First, let's compile this code into machine code that the virtual machine can
+interpret. Page 1 covers how to compile Tranquility code. What command did you
+use to compile your code? Use the <tt>-a</tt> flag to aid in our programming
+experience (this will come into play later)
+</p>
+<br>
+<h3>Question 8 (10 pts)</h3>
+<p>
+The compiler either provided output or it didn't. If you got no output, it
+means everything compiled correctly. If you get output, it means you had
+errors. Did you get errors? What errors did you get? How did you fix them in
+your code?
+<br><br>
+Repeat this process until you have no errors. Tell us how your debugging
+process went.
+</p>
+<br>
+<h3>Question 9 (10 pts)</h3>
+<p>
+Once you run out of compile time errors, it's time to test your code to make
+sure you got the desired output and functionality. The -a flag in the tranqc
+command earlier created a lab6.html file in your public_html directory. Go
+to this webpage in your browser and test your code.
+<br><br>
+Did your code produce the desired output? If not, how will you change your code
+to make it work? After changing your code, make sure to recompile, debug, then
+test again until you have a working product.
+</p>
+<br>
+<h3>Question 10 (10 pts)</h3>
+<p>
+Finally, we are going to perform the final step of the CARDIAC program that we
+didn't implement in the CARDIAC, we are going to divide the running sum but the
+count of numbers and produce an average.
+<br><br>
+Implement that step, debug, and test your code. Does it work? If it doesn't
+repeat until it does. Describe how this process went for you.
+</p>
+<br>
+<h3>Question 11 (10 pts)</h3>
+<p>
+Post the link to your website with the working code here. The code is worth
+10 points while the other 10 questions are worth 90.
+</p>
+<br>
+<hr>
+<h2>Submission Conventions</h2>
+<p>
+<b>Webpage on tux</b>
+<br>
+lab6.html : Your resulting webpage you make
+<br>
+<b>Submit on BBLearn</b>
+<br>
+questions6.txt (90pts) : A plain text file with your answers to the questions
+<br>
+lab6.t (10pts) : The source code for your program
+</p>
+<br>
+</body>
+</html>
