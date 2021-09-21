@@ -1,7 +1,7 @@
 function setupSidebar()
 {
 	document.getElementById("sideBar").innerHTML = "<br><a href=\"index.html\"><b>Introduction</b></a>" +
-      "<a href=\"about.html\"><b>About Me</b></a>";
+      "<a href=\"https://charlierose.dev\"><b>About Me</b></a>";
 	document.getElementById("sideBar").innerHTML += "<a href=\"answers.html\"><b>Practice Problem Answers</b></a><hr>";
     document.getElementById("sideBar").innerHTML += "<a href=\"numSec/\"><b>Chapter 1 :</b> Number Bases</a>" +
       "<a href=\"numSec/baseTen.html\"><b>1.1 :</b> Base-10</a>" +

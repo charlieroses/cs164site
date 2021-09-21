@@ -50,7 +50,7 @@ this class, your TAs are your best resources for help.
 ### Question 3 - Your Drexel Account (10pts)
 
 You should already have been issued a userid and password and an email address.
-We will refer to it as your userid here, but you may hear is called your Drexel
+We will refer to it as your userid here, but you may hear it called your Drexel
 One ID or login or your single signon ID or login. It is what you used to log
 into this Blackboard session to do this lab. It also permits you access to file
 space on the tux server (also referred to as the `tux.cs.drexel.edu` server).
@@ -70,20 +70,24 @@ Web. For this, you need to use the `tux.cs.drexel.edu` server.
 <img src="labs/WebCT.png">
 </center>
 
-Your userid on tux permits you to create and maintain your own web site. While
-creation of a home page, etc. is beyond the extent of today's lab, you will 
+Your userid on tux permits you to store files on these computers in CCI. In
+addition to storing these files, you can create and maintain your own web site. While
+the design of a home page, etc. is beyond the extent of today's lab, you will 
 create the site and post a public file on it. In this section you will perform
 some steps that should only need to be done once for the lifetime of your account,
 to set it up properly. In later sections, you will create a file and post it at
 your site.
 
 In order to create a Tux account, you should have recieved an email from Brian
-Bijeau. It is an encrypted email that may have been marked as potentially 
-dangerous or spam. Here you will be given a temporary password. If you did not get
-that email, let your TA know and email Brian Bijeau at bjb344@drexel.edu
+Bijeau. This email will let you know an account has been created for you, and
+gives you a userid. It will direct you to
+[this website](https://support.cci.drexel.edu/act/tux/reset/) where you can create
+a password for yourself. If you did not get
+that email, let your TA know and email Brian Bijeau at bjb344@drexel.edu or
+iCommons at ihelp@drexel.edu
 
-**NOTE: Brian Bijeau's email tells you to install PuTTY. IGNORE THIS. Use the
-email to get your temporary password and nothing else**
+**NOTE: Brian Bijeau's email may tell you to install PuTTY. IGNORE THIS. Use the
+email to get your login credentials and nothing else**
 
 For this question, explain any similarities and/or differences between Tux and
 BBLearn.
@@ -606,26 +610,25 @@ Does all the world look like a nail to you? Why or why not? Record your answer.
 
 Include a link to your website here so the TAs can properly grade it.
 
-### Question 13 - Slack (5pts)
+### Question 13 - Discord (5pts)
 
 In an attempt to make it easier for y'all to keep in contact with your TAs and
-classmates to ask questions, we created a Slack channel.
-TAs are identifiable with the (TA) abbreviation. Join using the link below. This
-link can also be found under "Course Information" on BBLearn.
+classmates to ask questions, we're using the new CCI Discord Server. You may
+find other classes you're taking also using this server to commnicate.
 
-[Slack Channel Join Link](https://join.slack.com/t/cs164-fa20/signup)
+[Discord Server Join Link](https://support.cci.drexel.edu/act/discord)
 
-Once in the channel, set your name to whatever your name is on Blackboard.
-If you have a preferred name set, that is what it is on Blackboard.
-If you need help setting a preferred name, talk to your TA.
-Put your pronouns alongside your name.
-If you wanna make it super easy for us to identify you, upload a profile picture
-of yourself.
+Your name will be automatically set to whatever it is on BlackBoard.
+If you use a name that is not your legal name, contact a TA to talk about how
+to set a preffered name in Blackboard.
 
 To recieve credit for this question, post a quick bio in the #introductions
 channel. Your quick bio should include your name, pronouns, major, and also give
-us a fun fact about yourself NOT related to Drexel or your major.
-
+us a fun fact about yourself NOT related to Drexel or your major. Pick something
+wierd or unique or interesting. I'm tired of reading introductions that say
+"I play video games and listen to music". What types of games? What types of
+music. There are 300+ students in this class. You'll do better in college if you're
+memorable.
 
 It would also be nice if you sent a message to a TA to say hi.
 We're nice people who want to help you in this course so it would be smart to
